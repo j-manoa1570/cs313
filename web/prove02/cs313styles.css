@@ -10,7 +10,7 @@ body {
 }
 
 .assign_bg {
-        background-image: url("mac_keyboard.jpg");
+    background-image: url("mac_keyboard.jpg");
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -27,40 +27,6 @@ body {
     background-size: cover;
 }
 
-.block {
-    display: inline-block;
-}
-
-.h {
-    font-family: Myriad Pro, sans-serif, helvetica;
-    font-weight: 600;
-    font-size: 90px;
-    color: aliceblue;
-    margin: auto;
-    width: auto;
-    text-align: center;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-}
-
-.center {
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.center_wide {
-    margin: auto;
-    width: 85%;
-    text-align: center;
-}
-
-.bg_gap {
-    min-height: 300px;
-    clear: both;
-}
-
 #headerround {
     background: #e8d9c5;
     height: 50px;
@@ -69,20 +35,6 @@ body {
     text-align: right;
     border: .5px;
 }
-      
-#footerround {
-    background: #e8d9c5;
-    height: 30px;
-    margin: auto;
-    width: 85%;
-    opacity: 0.90;
-    padding: 3px;
-    text-align: center; 
-    border: .5px;
-    border-radius: 5px;
-    font-family: Myriad Pro, Helvetica, sans-serif;
-    font-size: 75%;
-} 
 
 #standard {
     background-color: #FFFFFF;
@@ -95,58 +47,11 @@ body {
     margin: auto;
 }
 
-#standard_store {
-    background-color: #FFFFFF;
-    opacity: 1.00;
-    font-family: Myriad Pro;
-    box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    width: 85%;
-    margin: auto;
-}
-
-#standard_img{
-    width: auto;
-    
-}
-
-#left {
-    background-color: #FFFFFF;
-    opacity: .90;
-    font-family: Myriad Pro;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    float: left;
-    text-align: center;
-    width: 500px;
-}
-
-#right {
-    background-color: #FFFFFF;
-    opacity: 1.0;
-    font-family: Myriad Pro;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    float: left;
-}
-
-#right_img {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    float: left;
-}
-
 /* CSS Styles CS 313 */
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #e8d9c5;
+    background-color: transparent;
     padding: 16px;
     font-size: 16px;
     border: none;
