@@ -1,0 +1,238 @@
+/* CSS Style Sheet */
+
+body {
+    margin: 0 auto;
+    font-family: Myriad Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #545454;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+    font-family: Myriad Pro, sans-serif, Helvetica;
+    font-size: 40px;
+}
+
+i {
+    font-family: cursive;
+    font-style: italic;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 125%;
+}
+
+th {
+    font-family: Myriad Pro, Helvetica;
+    font-size: 125%;
+}
+
+.block {
+    display: inline-block;
+}
+
+.h {
+    font-family: Myriad Pro, sans-serif, helvetica;
+    font-weight: 600;
+    font-size: 90px;
+    color: aliceblue;
+    margin: auto;
+    width: auto;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.center {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.center_wide {
+    margin: auto;
+    width: 85%;
+    text-align: center;
+}
+
+.front_bg {
+    background-image: url("maxresdefault.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hammocks_bg {
+    background-image: url("Alan-Nelson.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.link_bg {
+    background-image: url("hammocks.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.events_bg {
+    background-image: url("events.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about_bg {
+    background-image: url("IMG_0779.JPG");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg_gap {
+    min-height: 300px;
+    clear: both;
+}
+
+.store_bg {
+    background-image: url("snow_hammock.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#headerround {
+    background: #e8d9c5;
+    height: 50px;
+    margin: auto;
+    padding-right: 10px;
+    text-align: center;
+    border: .5px;
+}
+      
+#footerround {
+    background: #e8d9c5;
+    height: 30px;
+    margin: auto;
+    padding: 7px;
+    text-align: center; 
+    font-size: 75%;
+} 
+
+#standard {
+    background-color: #FFFFFF;
+    opacity: .90;
+    font-family: Myriad Pro;
+    box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
+    border: .5px; 
+    border-radius: 5px;
+    padding: 10px;
+    width: 65%;
+    margin: auto;
+}
+
+#standard_store {
+    background-color: #FFFFFF;
+    opacity: 1.00;
+    font-family: Myriad Pro;
+    box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
+    border: .5px; 
+    border-radius: 5px;
+    padding: 10px;
+    width: 85%;
+    margin: auto;
+}
+
+#standard_img{
+    width: auto;
+    
+}
+
+#left {
+    background-color: #FFFFFF;
+    opacity: .90;
+    font-family: Myriad Pro;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    border: .5px; 
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+    text-align: center;
+    width: 500px;
+}
+
+#right {
+    background-color: #FFFFFF;
+    opacity: 1.0;
+    font-family: Myriad Pro;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    border: .5px; 
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+}
+
+#right_img {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    border: .5px; 
+    float: left;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: +1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
