@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="/../assignments/ponder_02/cs313styles.css">
+        <link rel="stylesheet" href="/ponder_02/cs313styles.css">
         <link rel="stylesheet" href="ponder_03.css">
     </head>
     <body class="survey_bg">
@@ -17,14 +17,14 @@ session_start();
             <div class="dropdown">
                 <button class="dropbtn">Profile</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/home.html">Homepage</a>
+                    <a href="/ponder_02/home.html">Homepage</a>
                     <a href="#">About Me</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Assignments</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/assignments.html">Homepage</a>
+                    <a href="/ponder_02/assignments.html">Homepage</a>
                     <a href="#">Others</a>
                     <a href="#">Coming Soon</a>
                 </div>
@@ -39,7 +39,7 @@ session_start();
             <div class="dropdown">
                 <button class="dropbtn">Hammocks/Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/assign03/assign03.html">Rexburg Hammocks</a>
+                    <a href="/ponder_02/assign03/assign03.html">Rexburg Hammocks</a>
                 </div>
             </div>
                                 </center>
