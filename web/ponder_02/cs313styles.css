@@ -9,92 +9,8 @@ body {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
-h1 {
-    font-family: Myriad Pro, sans-serif, Helvetica;
-    font-size: 40px;
-}
-
-i {
-    font-family: cursive;
-    font-style: italic;
-}
-
-legend {
-    font-weight: bold;
-    font-size: 125%;
-}
-
-th {
-    font-family: Myriad Pro, Helvetica;
-    font-size: 125%;
-}
-
-.block {
-    display: inline-block;
-}
-
-.h {
-    font-family: Myriad Pro, sans-serif, helvetica;
-    font-weight: 600;
-    font-size: 90px;
-    color: aliceblue;
-    margin: auto;
-    width: auto;
-    text-align: center;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-}
-
-.center {
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.center_wide {
-    margin: auto;
-    width: 85%;
-    text-align: center;
-}
-
-.front_bg {
-    background-image: url("maxresdefault.jpg");
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.hammocks_bg {
-    background-image: url("Alan-Nelson.jpg");
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.link_bg {
-    background-image: url("hammocks.jpg");
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.events_bg {
-    background-image: url("events.jpg");
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.about_bg {
-    background-image: url("IMG_0779.JPG");
+.assign_bg {
+    background-image: url("mac_keyboard.jpg");
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -102,9 +18,13 @@ th {
     background-size: cover;
 }
 
-.bg_gap {
-    min-height: 300px;
-    clear: both;
+.front_bg {
+    background-image: url("home_page_bg.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #headerround {
@@ -115,43 +35,6 @@ th {
     text-align: center;
     border: .5px;
 }
-      
-#footerround {
-    background: #e8d9c5;
-    height: 30px;
-    margin: auto;
-    padding: 7px;
-    text-align: center; 
-    font-size: 75%;
-} 
-
-#standard {
-    background-color: #FFFFFF;
-    opacity: .90;
-    font-family: Myriad Pro;
-    box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    width: 65%;
-    margin: auto;
-}
-
-#standard_store {
-    background-color: #FFFFFF;
-    opacity: 1.00;
-    font-family: Myriad Pro;
-    box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    width: 85%;
-    margin: auto;
-}
-
-#standard_img{
-    width: auto;
-}
 
 a:link {
     text-decoration: none;
@@ -161,48 +44,15 @@ a:visited {
     text-decoration: none;
 }
 
-#newsletter {
+#standard {
     background-color: #FFFFFF;
     opacity: .90;
-    font-family: Myriad Pro;
     box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
     border: .5px; 
     border-radius: 5px;
     padding: 10px;
-    width: 20%;
+    width: 65%;
     margin: auto;
-    text-align: center;
-}
-
-#left {
-    background-color: #FFFFFF;
-    opacity: .90;
-    font-family: Myriad Pro;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    float: left;
-    text-align: center;
-    width: 500px;
-    margin: 4px;
-}
-
-#right {
-    background-color: #FFFFFF;
-    opacity: 1.0;
-    font-family: Myriad Pro;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    border-radius: 5px;
-    padding: 10px;
-    float: left;
-}
-
-#right_img {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    border: .5px; 
-    float: left;
 }
 
 /* Dropdown Button */
@@ -247,3 +97,4 @@ a:visited {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
