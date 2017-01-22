@@ -55,6 +55,7 @@ session_start();
         $_SESSION["Scomics"]=$_POST["comics"];
         $_SESSION["Scake"]=$_POST["cake"];
         $_SESSION["Sprogram"]=$_POST["program"];
+        $_SESSION["taken"] = "done";
         
         if($_SESSION["Sstarwars"] == "Star Wars")
             $data[0]++;

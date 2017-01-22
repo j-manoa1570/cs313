@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if ($_SESSION["taken"] == "done")
+{
+    $results = "/web/ponder_03/results_03.php";
+    header('Location: '. $results);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,14 +22,14 @@
             <div class="dropdown">
                 <button class="dropbtn">Profile</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/home.html">Homepage</a>
+                    <a href="/ponder_02/home.html">Homepage</a>
                     <a href="#">About Me</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Assignments</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/assignments.html">Homepage</a>
+                    <a href="/ponder_02/assignments.html">Homepage</a>
                     <a href="#">Others</a>
                     <a href="#">Coming Soon</a>
                 </div>
@@ -34,7 +44,7 @@
             <div class="dropdown">
                 <button class="dropbtn">Hammocks/Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="/../assignments/ponder_02/assign03/assign03.html">Rexburg Hammocks</a>
+                    <a href="/ponder_02/assign03/assign03.html">Rexburg Hammocks</a>
                 </div>
             </div>
                                 </center>
