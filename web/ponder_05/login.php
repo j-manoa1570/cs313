@@ -17,6 +17,7 @@ session_start();
             <input type="text" name="username">
             <p>Password:</p>
             <input type="text" name="password">
+            <br/>
             <input type="submit">
         </div>
     </body>
