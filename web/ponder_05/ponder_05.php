@@ -23,7 +23,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                     <input type="submit">
                     -->
                     <?php
-                    /*
+                    
                         $choice = $_POST['selection'];
 
                         $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
@@ -37,7 +37,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                             echo '<p>' . $row['fname'] . '</p>';
                             echo '<p>' . $row['lname'] . '</p>';
                             echo '<p>' . $row['bio'] . '</p>';
-                        }*/
+                        }
                         ?>
                 </div>
             </div>
