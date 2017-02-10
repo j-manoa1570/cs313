@@ -42,31 +42,25 @@ a:visited {
     //box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
    // border: .5px; 
     //border-radius: 5px;
-    padding: 10px;
+    //padding: 10px;
     //width: 60%;
-    margin: auto;
+    //margin: auto;
  //   height: 100%;
 /*    z-index: 1;*/
-    padding-bottom: 100%;
-    display:flex;
-    flex-flow: nowrap;
+    //padding-bottom: 100%;
 }
 
 #standardtext {
     background-color: #000000;
     border-radius: 5px;
-    width: 100%;
-    display:flex;
-    flex-flow: nowrap;
+    //width: 100%;
 }
 
 #side {
     background-color: antiquewhite;
-  //  width: 20%;
-    padding: 10px;
-    padding-bottom: 100%;
-    display:flex;
-    flex-flow: nowrap;
+    //width: 20%;
+    //padding: 10px;
+    //padding-bottom: 100%;
 }
 
 /* Dropdown Button */
