@@ -25,7 +25,6 @@ a:visited {
 .containercol {
     display:flex;
     flex-flow: column nowrap;
-    padding-bottom: 100%;
 }
 
 #standard {
