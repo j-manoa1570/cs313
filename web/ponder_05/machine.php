@@ -18,10 +18,6 @@ Some parts of the php is not what I created. It is taken from the instructor fil
         <div class="containerrow">
             <div id="side">
                 <div id="containercol">
-                    <p>This is profile information for (Type 1 for Jonathan and 2 for Seth):</p>
-                    <input type="text" name="selection" method="POST"/>
-                    <input type="submit"/>
-                    
                     <?php
                         
                         $choice = $_POST['selection'];
