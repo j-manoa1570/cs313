@@ -48,19 +48,25 @@ a:visited {
  //   height: 100%;
 /*    z-index: 1;*/
     padding-bottom: 100%;
+    display:flex;
+    flex-flow: nowrap;
 }
 
 #standardtext {
     background-color: #000000;
     border-radius: 5px;
     width: 100%;
+    display:flex;
+    flex-flow: nowrap;
 }
 
 #side {
     background-color: antiquewhite;
-    width: 20%;
+  //  width: 20%;
     padding: 10px;
     padding-bottom: 100%;
+    display:flex;
+    flex-flow: nowrap;
 }
 
 /* Dropdown Button */
