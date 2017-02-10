@@ -13,7 +13,9 @@ session_start();
     <body>
         <div>
             <p>Welcome to Machine! Your one stop for increased productivity!</p>
+            <p>Username:</p>
             <input type="text" name="username">
+            <p>Password:</p>
             <input type="text" name="password">
             <input type="submit">
         </div>
