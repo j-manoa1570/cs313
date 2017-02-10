@@ -2,6 +2,12 @@
 require "heroku_access.php";
 $db = get_db();
 ?>
+
+
+<!--
+Some parts of the php is not what I created. It is taken from the instructor file for accessing a database from the Week 05 Team Activity.
+
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,6 +18,7 @@ $db = get_db();
         <div class="containerrow">
             <div id="side">
                 <p>This is stuff on the left side of the page</p>
+                
             </div>
             <div id="standard">
                 <div class="containercol">
@@ -38,8 +45,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	// row, and we can access the different values based on their
 	// name
 	echo '<p>';
-	echo '<strong>' . $row['communication'] . ' ' . $row['player_id'] . ':';
-	echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
+	echo $row['communication'];
 	echo '</p>';
 }
 ?>
