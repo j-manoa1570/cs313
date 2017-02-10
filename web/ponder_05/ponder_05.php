@@ -11,7 +11,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="ponder_05.css">
+        <link rel="stylesheet" href="">
         <title>Machine</title>
     </head>
     <body>
