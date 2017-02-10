@@ -36,8 +36,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                             // The variable "row" now holds the complete record for that
                             // row, and we can access the different values based on their
                             // name
-                            echo '<p>' . $row['fname'] . '</p>';
-                            echo '<p>' . $row['lname'] . '</p>';
+                            echo '<p>' . $row['fname'] . ' ' . $row['lname'];
                             echo '<p>' . $row['bio'] . '</p>';
                         }
                         ?>
