@@ -26,7 +26,17 @@ a:visited {
     text-decoration: none;
 }
 
-#standard1 {
+.containerrow {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.containercol {
+    display:flex;
+    flex-flow: column nowrap;
+}
+
+#standard {
     background-color: #FFFFFF;
     opacity: .90;
     //box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
@@ -35,23 +45,25 @@ a:visited {
     padding: 10px;
     width: 60%;
     margin: auto;
-    height: 100%;
-    z-index: 1;
+ //   height: 100%;
+/*    z-index: 1;*/
     padding-bottom: 100%;
 }
 
-#left {
-    background-color: antiquewhite;
-    width: 20%;
-    float: left;
-    padding: 10px;
-    padding-bottom: 100%;
+#standardtext {
+    background-color: #000000;
+    border-radius: 5px;
+    width: 100%;
+ //   padding-bottom: 80%;
 }
 
-#right {
+#text_color {
+    color: #FFFFFF;
+}
+
+#side {
     background-color: antiquewhite;
     width: 20%;
-    float: right;
     padding: 10px;
     padding-bottom: 100%;
 }
