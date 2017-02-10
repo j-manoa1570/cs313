@@ -12,6 +12,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
 <html lang="en">
     <head>
         <link rel="stylesheet" href="">
+        <link rel="icon" href="http://img02.deviantart.net/5f38/i/2003/40/6/3/welcome_to_the_machine.jpg">
         <title>Machine</title>
     </head>
     <body>
@@ -55,13 +56,7 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                             echo '</p>';
                         }
                         ?>
-                        
-              <!--      <p id="text_color">
-                    Admin 4:51:29PM: This is where the conversation text will appear. I think one problem I will run into is that this should actually be a text file but for now it is just stuff in the database.
-                </p>
-               <!-- <p>
-                    Admin 4:52:09PM: Hopefully I will also figure out how to display the text similar to this but better.
-                </p> --></div>
+                    </div>
                     <br>
                     <textarea rows="5" style="width: 100%">Type here!</textarea>
                 </div>
