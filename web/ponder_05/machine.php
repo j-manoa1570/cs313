@@ -60,9 +60,9 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                     <br>
                     <textarea rows="5" style="width: 100%">Type here!</textarea>
                 </div>
-            </div>
             <div id="side">
                 <p>This is stuff on the right side of the page</p>
+            </div>
             </div>
     </body>
 </html>
