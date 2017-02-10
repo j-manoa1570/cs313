@@ -42,7 +42,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	// row, and we can access the different values based on their
 	// name
 	echo '<p>';
-	echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
+	echo '<strong>' . $row['communication'] . ' ' . $row['player_id'] . ':';
 	echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
 	echo '</p>';
 }
