@@ -18,24 +18,13 @@ Some parts of the php is not what I created. It is taken from the instructor fil
         <div class="containerrow">
             <div id="side">
                 <div id="containercol">
-                    <p>This is profile information for(Type 1 for Jonathan and 2 for Seth):</p>
-                    <input type="text" name="selection" method="GET">
+                    <p>This is profile information for</p><p>(Type 1 for Jonathan and 2 for Seth):</p>
+                    <input type="text" name="selection" method="POST">
                     
                     <?php
                     
-                        $choice = $_GET['selection'];
-                        // In this example, for simplicity, the query is executed
-                        // right here and the data echoed out as we iterate the query.
-                        // You could imagine that in a more involved application, we
-                        // would likely query the database in a completely separate file / function
-                        // and build a list of objects that held the components of each
-                        // scripture. Then, here on the page, we could simply call that 
-                        // function, and iterate through the list that was returned and
-                        // print each component.
-                        // First, prepare the statement
-                        // Notice that we avoid using "SELECT *" here. This is considered
-                        // good practice so we don't inadvertently bring back data we don't
-                        // want, especially if the database changes later.
+                        $choice = $_POST['selection'];
+
                         $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
                         $statement->execute();
                         // Go through each result
