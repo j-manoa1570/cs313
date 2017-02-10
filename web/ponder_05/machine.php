@@ -39,8 +39,8 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                         ?>
                 </div>
             </div>
-                <div class="containercol">
-                    <div id="standard">
+            <div class="containercol">
+                <div id="standard">
                     <div id="standardtext">
                         <?php
                         
@@ -59,11 +59,15 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                         ?>
                     </div>
                     <br>
-                    <textarea rows="5" style="width: 100%">Type here!</textarea>
-                </div></div>
+                    <form action="" method="post">
+                        <textarea rows="5" name="instant_message" style="width: 100%">Type here!</textarea>
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
             <div id="side">
                 <p>This is stuff on the right side of the page</p>
             </div>
-            </div>
+        </div>
     </body>
 </html>
