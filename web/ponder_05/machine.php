@@ -1,12 +1,13 @@
 <?php
 require "heroku_access.php";
 $db = get_db();
+
+
 ?>
 
 
 <!--
 Some parts of the php is not what I created. It is taken from the instructor file for accessing a database from the Week 05 Team Activity.
-
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -21,22 +22,25 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                 <div id="containercol">
                     <?php
                         
-                        $choice = $_POST['selection'];
-                        if ($choice == null)
-                            $choice = 1;
-                    
-                        $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
-                        $statement->execute();
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];        
+//                    if ($choice == null)
+//                        $choice = 1;
+                        
+                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
+                    $choice = $choice[id];
+                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
+                    $statement->execute();
                         // Go through each result
-                        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                        {
+                    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                    {
                             // The variable "row" now holds the complete record for that
                             // row, and we can access the different values based on their
                             // name
-                            echo '<p>' . $row['fname'] . ' ' . $row['lname'];
-                            echo '<p>' . $row['bio'] . '</p>';
-                        }
-                        ?>
+                        echo '<p>' . $row['fname'] . ' ' . $row['lname'];
+                        echo '<p>' . $row['bio'] . '</p>';
+                    }
+                    ?>
                 </div>
             </div>
             <div class="containercol">

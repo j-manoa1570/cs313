@@ -14,7 +14,8 @@ session_start();
     <body>
         <div>
             <p>Welcome to Machine! Your one stop for increased productivity!</p>
-            <form action="machine.php" method="post"><p>Username:
+            <form action="machine.php" method="post">
+                <p>Username:
             <input type="text" name="username">
                 <br/>
                 Password:
