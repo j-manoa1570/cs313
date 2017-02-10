@@ -23,9 +23,11 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                     <input type="submit"/>
                     
                     <?php
-                    
+                        
                         $choice = $_POST['selection'];
-
+                        if ($choice == null)
+                            $choice = 1;
+                    
                         $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
                         $statement->execute();
                         // Go through each result
