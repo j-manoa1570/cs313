@@ -59,7 +59,16 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
                     
+                    echo '<p>' . 'Name:' . '</p>';
                     echo '<p>' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
+                    echo '<p>' . 'Title:' . '</p>';
+                    echo '<p>' . $row_profile['title'] . '</p>';
+                    echo '<p>' . 'Phone:' . '</p>';
+                    echo '<p>' . $row_profile['phone'] . '</p>';
+                    echo '<p>' . 'Email:' . '</p>';
+                    echo '<p>' . $row_profile['email'] . '</p>';
+                    echo '<p>' . 'Biography: ' . '</p>';
+                    echo '<p>' . $row_profile['bio'] . '</p>';
                     ?>
                 </div>
             </div>
