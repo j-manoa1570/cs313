@@ -18,6 +18,9 @@ The general format of the php to postgresql is taken from the instructor's solut
     </head>
     <body>
         <div class="containerrow">
+ 
+            <!-- For now, this side will display the user profile. For a future version, this will be most likely for user selection and group selection. -->
+            
             <div id="side">
                 <div id="containercol">
                     <?php
@@ -28,6 +31,7 @@ The general format of the php to postgresql is taken from the instructor's solut
 //                        $choice = 1;
                         
                     $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
+                    $user_id->execute();
                     $choice = $choice[id];
                     $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE player_id=$choice");
                     $statement->execute();
@@ -44,6 +48,9 @@ The general format of the php to postgresql is taken from the instructor's solut
                 </div>
             </div>
             <div class="containercol">
+                
+                <!-- This will contain the conversation text as well as the input field for text below it. -->
+                
                 <div id="standard">
                     <div id="standardtext">
                         <?php
@@ -69,6 +76,9 @@ The general format of the php to postgresql is taken from the instructor's solut
                     </form>
                 </div>
             </div>
+            
+            <!-- For now, this is an empty field because I do not know what else should go here -->
+            
             <div id="side">
                 <p>This is stuff on the right side of the page</p>
             </div>
