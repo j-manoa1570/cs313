@@ -37,7 +37,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                                         
                     $user_id->closeCursor();
                     $id = $row['id'];
-                    $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id');
+                    $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE player_id= :id');
                     $user_profile->bindValue(':id', $id);
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
