@@ -50,5 +50,5 @@ a:visited {
     background-color: antiquewhite;
     width: 20%;
     padding: 10px;
-    padding-bottom: 100%;
+    padding-bottom: auto;
 }
