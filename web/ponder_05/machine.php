@@ -32,11 +32,12 @@ The general format of the php to postgresql is taken from the instructor's solut
 //                        $choice = 1;
 
                     
-                    $user_id = $db->prepare("SELECT username, password FROM player WHERE username= :username AND password= :password");
+                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username AND password= :password");
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
                     // do a bind value for the password as well
                     $user_id->execute();
+                    
                     while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
@@ -47,18 +48,16 @@ The general format of the php to postgresql is taken from the instructor's solut
                     }    
                     
                     $user_id->closeCursor();
-//                    $choice = $choice['id'];
-//                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=1");
-//                    $statement->execute();
-                        // Go through each result
-//                    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-//                    {
-//                            // The variable "row" now holds the complete record for that
-//                            // row, and we can access the different values based on their
-//                            // name
-//                        echo '<p>' . $row['fname'] . ' ' . $row['lname'];
-//                        echo '<p>' . $row['bio'] . '</p>';
-//                    }
+                    
+                    $id = $row['id'];
+                    
+                    $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile where player_id= :id");
+                    $user_profile->bindValue(' :id', $id);
+                    $user_profile->execute();
+                    $row = $user_profile->fetch(PDO::FETCH_ASSOC);
+                    $user_profile->closeCursor();
+                    
+                    echo '<p>' . $row['fname'] . ' ' . $row['lname'];
                     ?>
                 </div>
             </div>
