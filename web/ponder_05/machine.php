@@ -27,12 +27,9 @@ The general format of the php to postgresql is taken from the instructor's solut
                     <?php
                         
                     $username = $_POST['username'];
-                    $password = $_POST['password'];  
-//                    echo "Username: $username";
-//                    echo "Password: $password";
-
+                    $password = $_POST['password'];
                     
-                    $user_id = $db->prepare('SELECT * FROM player WHERE username= :username AND password= :password');
+                    $user_id = $db->prepare('SELECT id FROM player WHERE username= :username AND password= :password');
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
                     $user_id->execute();
