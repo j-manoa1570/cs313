@@ -38,7 +38,6 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $user_id->execute();
                     $row = $user_id->fetch(PDO::FETCH_ASSOC);
                     
-                    echo '<p>' . ' ' . '</p>';
                   /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
@@ -49,11 +48,13 @@ The general format of the php to postgresql is taken from the instructor's solut
                     }  */  
                     
                     $user_id->closeCursor();
-                    
+                    echo '<p>' . ' ' . '</p>';
                     $id = $row['id'];
-                    
+                    echo '<p>' . ' ' . '</p>';
                     $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id");
+                    echo '<p>' . ' ' . '</p>';
                     $user_profile->bindValue(' :id', $id);
+                    echo '<p>' . ' ' . '</p>';
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
