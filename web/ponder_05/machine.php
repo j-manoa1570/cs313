@@ -32,7 +32,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                         
                     $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
                     $user_id->execute();
-                    $choice = $user_id->fetch(PDO::FETCH_ASSOC));
+                    $choice = $choice['id'];
                     $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE player_id=$choice");
                     $statement->execute();
                         // Go through each result
