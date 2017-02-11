@@ -37,7 +37,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $user_id->bindvalue(':password', $password);
                     // do a bind value for the password as well
                     $user_id->execute();
-                    
+                    $row = $user_id->fetch(PDO::FETCH_ASSOC);
                   /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
@@ -54,10 +54,10 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile where player_id= :id");
                     $user_profile->bindValue(' :id', $id);
                     $user_profile->execute();
-                    $row = $user_profile->fetch(PDO::FETCH_ASSOC);
+                    $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
                     
-                    echo '<p>' . $row['fname'] . ' ' . $row['lname'];
+                    echo '<p>' . $row_profile['fname'] . ' ' . $row_profile['lname'];
                     ?>
                 </div>
             </div>
