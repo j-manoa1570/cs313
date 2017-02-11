@@ -32,10 +32,10 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $username = 'jester1570';
                     $password = 'Jmonnao1.';
                     
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
-                    $user_id->execute();
-                    //$choice = $choice['id'];
-                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE player_id=$user_id");
+//                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username");
+//                    $user_id->execute();
+//                    $choice = $choice['id'];
+                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE player_id=$choice");
                     $statement->execute();
                         // Go through each result
                     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -57,10 +57,10 @@ The general format of the php to postgresql is taken from the instructor's solut
                     <div id="standardtext">
                         <?php
                         
-                        $statement = $db->prepare("SELECT communication, player_id FROM conversation");
-                        $statement->execute();
+//                        $statement = $db->prepare("SELECT communication, player_id FROM conversation");
+//                        $statement->execute();
                         // Go through each result
-                        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                        /*while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {
                             // The variable "row" now holds the complete record for that
                             // row, and we can access the different values based on their
@@ -68,7 +68,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                             echo '<p>';
                             echo $row['communication'];
                             echo '</p>';
-                        }
+                        }*/
                         ?>
                     </div>
                     <br>
