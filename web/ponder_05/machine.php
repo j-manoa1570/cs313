@@ -33,7 +33,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $password = 'Jmonnao1.';
                     
                     $user_id = $db->prepare("SELECT id FROM player WHERE username=$username");
-//                    $user_id->execute();
+                    $user_id->execute();
                     while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
@@ -44,7 +44,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                     }                   
 //                    $choice = $choice['id'];
                     $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=1");
-                    $statement->execute();
+       //             $statement->execute();
                         // Go through each result
                     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                     {
