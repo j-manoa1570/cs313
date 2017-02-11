@@ -13,7 +13,7 @@ The general format of the php to postgresql is taken from the instructor's solut
 <!DOCTYPE html>
 <html lang="en">
     <head>
-<!--        <link rel="stylesheet" href="ponder_05.css"> -->
+        <link rel="stylesheet" href="ponder_05.css">
         <link rel="icon" href="welcome_to_the_machine.png">
         <title>Machine</title>
     </head>
