@@ -8,7 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="icon" href="http://img02.deviantart.net/5f38/i/2003/40/6/3/welcome_to_the_machine.jpg">
+        <link rel="icon" href="welcome_to_the_machine.png">
         <title>Welcome to Machine!</title>
     </head>
     <body>
