@@ -28,8 +28,8 @@ The general format of the php to postgresql is taken from the instructor's solut
                         
                     $username = $_POST['username'];
                     $password = $_POST['password'];  
-                    echo "Username: $username";
-                    echo "Password: $password";
+//                    echo "Username: $username";
+//                    echo "Password: $password";
 
                     
                     $user_id = $db->prepare('SELECT * FROM player WHERE username= :username AND password= :password');
@@ -37,24 +37,11 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $user_id->bindvalue(':password', $password);
                     $user_id->execute();
                     $row = $user_id->fetch(PDO::FETCH_ASSOC);
-                    
-                  /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
-                    {
-                            // The variable "row" now holds the complete record for that
-                            // row, and we can access the different values based on their
-                            // name
-                        echo '<p>' . $row['username'] . ' ' . $row['password'];
-                        echo '<p>' . $row['bio'] . '</p>';
-                    }  */  
-                    
+                                        
                     $user_id->closeCursor();
-                    echo '<p>' . ' 1' . '</p>';
                     $id = $row['id'];
-                    echo '<p>' . ' 2' . '</p>';
                     $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id');
-                    echo '<p>' . ' 3' . '</p>';
                     $user_profile->bindValue(':id', $id);
-                    echo '<p>' . ' 4' . '</p>';
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
