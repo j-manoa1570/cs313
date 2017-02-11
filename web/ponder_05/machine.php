@@ -27,15 +27,14 @@ The general format of the php to postgresql is taken from the instructor's solut
                     <?php
                         
                     $username = $_POST['username'];
-                    $password = $_POST['password'];        
-//                   if ($choice == null)
-//                        $choice = 1;
+                    $password = $_POST['password'];  
+                    echo "Username: $username";
+                    echo "Password: $password";
 
                     
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username AND password= :password");
+                    $user_id = $db->prepare("SELECT * FROM player WHERE username= :username AND password= :password");
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
-                    // do a bind value for the password as well
                     $user_id->execute();
                     $row = $user_id->fetch(PDO::FETCH_ASSOC);
                   /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
@@ -51,13 +50,13 @@ The general format of the php to postgresql is taken from the instructor's solut
                     
                     $id = $row['id'];
                     
-                    $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile where player_id= :id");
+                    $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id");
                     $user_profile->bindValue(' :id', $id);
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
                     
-                    echo '<p>' . $row_profile['fname'] . ' ' . $row_profile['lname'];
+                    echo '<p>' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
                     ?>
                 </div>
             </div>
