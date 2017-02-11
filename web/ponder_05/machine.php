@@ -32,11 +32,13 @@ The general format of the php to postgresql is taken from the instructor's solut
                     echo "Password: $password";
 
                     
-                    $user_id = $db->prepare("SELECT * FROM player WHERE username= :username AND password= :password");
+                    $user_id = $db->prepare('SELECT * FROM player WHERE username= :username AND password= :password');
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
                     $user_id->execute();
                     $row = $user_id->fetch(PDO::FETCH_ASSOC);
+                    
+                    echo '<p>' . ' ' . '</p>';
                   /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
