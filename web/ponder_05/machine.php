@@ -48,13 +48,13 @@ The general format of the php to postgresql is taken from the instructor's solut
                     }  */  
                     
                     $user_id->closeCursor();
-                    echo '<p>' . ' ' . '</p>';
+                    echo '<p>' . ' 1' . '</p>';
                     $id = $row['id'];
-                    echo '<p>' . ' ' . '</p>';
-                    $user_profile = $db->prepare("SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id");
-                    echo '<p>' . ' ' . '</p>';
-                    $user_profile->bindValue(' :id', $id);
-                    echo '<p>' . ' ' . '</p>';
+                    echo '<p>' . ' 2' . '</p>';
+                    $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE id= :id');
+                    echo '<p>' . ' 3' . '</p>';
+                    $user_profile->bindValue(':id', $id);
+                    echo '<p>' . ' 4' . '</p>';
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
