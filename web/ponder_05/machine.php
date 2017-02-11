@@ -33,7 +33,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $username = 'jester1570';
                     $password = 'Jmonnao1.';
                     
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username AND password= :password");
+                    $user_id = $db->prepare("SELECT username, password FROM player WHERE username= :username AND password= :password");
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
                     // do a bind value for the password as well
