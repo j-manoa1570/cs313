@@ -38,14 +38,14 @@ The general format of the php to postgresql is taken from the instructor's solut
                     // do a bind value for the password as well
                     $user_id->execute();
                     
-                    while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
+                  /*  while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
                             // The variable "row" now holds the complete record for that
                             // row, and we can access the different values based on their
                             // name
                         echo '<p>' . $row['username'] . ' ' . $row['password'];
                         echo '<p>' . $row['bio'] . '</p>';
-                    }    
+                    }  */  
                     
                     $user_id->closeCursor();
                     
