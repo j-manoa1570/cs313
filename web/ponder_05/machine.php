@@ -13,7 +13,7 @@ Originally the PHP that was used for this page was the php that was found in the
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="ponder_05.css">
+      <!--  <link rel="stylesheet" href="ponder_05.css"> -->
         <link rel="icon" href="welcome_to_the_machine.png">
         <title>Machine</title>
     </head>
@@ -113,10 +113,15 @@ Originally the PHP that was used for this page was the php that was found in the
                         // 4) This is a combination of steps 2 and 3 but this time to the profile table
                         //    so we can retreive data on the player's profile.
                         $id = $row['id'];
+                        echo '<p>' . '3.1' , '</p>';
                         $user_profile = $db->prepare('SELECT communication FROM conversation WHERE player1_id= :id OR play2_id = :id');
+                        echo '<p>' . '3.2' , '</p>';
                         $user_profile->bindValue(':id', $id);
+                        echo '<p>' . '3.3' , '</p>';
                         $user_profile->execute();
+                        echo '<p>' . '3.4' , '</p>';
                         $row_conversation = $user_profile->fetch(PDO::FETCH_ASSOC);
+                        echo '<p>' . '3.5' , '</p>';
                         $user_profile->closeCursor();
                         echo '<p>' . '4' , '</p>';
                        
