@@ -3,6 +3,7 @@ require "heroku_access.php";
 $db = get_db();
 
 
+
 ?>
 
 
@@ -32,7 +33,9 @@ The general format of the php to postgresql is taken from the instructor's solut
                     $username = 'little spoon';
                     $password = 'Jmonnao1.';
                     
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username");
+                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username");
+                    $user_id->bindValue(':username', $username);
+                    // do a bind value for the password as well
                     $user_id->execute();
                     while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
                     {
@@ -41,7 +44,9 @@ The general format of the php to postgresql is taken from the instructor's solut
                             // name
                         echo '<p>' . $row['id'] . ' ' . $row['id'];
                         echo '<p>' . $row['bio'] . '</p>';
-                    }                   
+                    }    
+                    
+                    $user_id->closeCursor();
 //                    $choice = $choice['id'];
 //                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=1");
 //                    $statement->execute();
