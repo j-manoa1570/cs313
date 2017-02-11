@@ -30,11 +30,12 @@ The general format of the php to postgresql is taken from the instructor's solut
 //                    $password = $_POST['password'];        
 //                   if ($choice == null)
 //                        $choice = 1;
-                    $username = 'little spoon';
+                    $username = 'jester1570';
                     $password = 'Jmonnao1.';
                     
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username");
+                    $user_id = $db->prepare("SELECT id FROM player WHERE username= :username AND password= :password");
                     $user_id->bindValue(':username', $username);
+                    $user_id->bindvalue(':password', $password);
                     // do a bind value for the password as well
                     $user_id->execute();
                     while ($row = $user_id->fetch(PDO::FETCH_ASSOC))
@@ -42,7 +43,7 @@ The general format of the php to postgresql is taken from the instructor's solut
                             // The variable "row" now holds the complete record for that
                             // row, and we can access the different values based on their
                             // name
-                        echo '<p>' . $row['id'] . ' ' . $row['id'];
+                        echo '<p>' . $row['username'] . ' ' . $row['password'];
                         echo '<p>' . $row['bio'] . '</p>';
                     }    
                     
