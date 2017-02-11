@@ -114,7 +114,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         //    so we can retreive data on the player's profile.
                         $id = $row['id'];
                         echo '<p>' . '3.1' , '</p>';
-                        $user_profile = $db->prepare('SELECT communication FROM conversation WHERE player1_id= :id OR play2_id = :id');
+                        $user_profile = $db->prepare('SELECT communication FROM conversation WHERE player1_id= :id OR player2_id = :id');
                         echo '<p>' . '3.2' , '</p>';
                         $user_profile->bindValue(':id', $id);
                         echo '<p>' . '3.3' , '</p>';
