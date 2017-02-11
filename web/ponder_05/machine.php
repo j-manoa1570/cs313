@@ -25,11 +25,13 @@ The general format of the php to postgresql is taken from the instructor's solut
                 <div id="containercol">
                     <?php
                         
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];        
+//                    $username = $_POST['username'];
+//                    $password = $_POST['password'];        
 //                   if ($choice == null)
 //                        $choice = 1;
-                        
+                    $username = 'jester1570';
+                    $password = 'Jmonnao1.';
+                    
                     $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
                     $user_id->execute();
                     $choice = $choice['id'];
