@@ -1,11 +1,7 @@
 <?php
 require "heroku_access.php";
 $db = get_db();
-
-
-
 ?>
-
 
 <!--
 Originally the PHP that was used for this page was the php that was found in the instructor solution in Week 05 Team Activity but was changed once it was found that it was not sufficient for my needs. Received help on writing PHP from Seth Childers who received help from another student taking a database class using MySQL.
@@ -34,6 +30,8 @@ Originally the PHP that was used for this page was the php that was found in the
                      * 4) Fetches player profile information using player id as fk
                      * 5) Outputs the player's profile information 
                      * More detail is below in each of the 5 sections
+                     * NOTE: This should really be in a seperate file that contains php functions
+                     *       since this is used in a section below again almost line for line.
                      *************************************************************************/
                     
                     // 1) Takes the form information from login.php (username and password that was entered in) 
@@ -87,6 +85,12 @@ Originally the PHP that was used for this page was the php that was found in the
                         * 4) Fetches player profile information using player id as fk
                         * 5) Outputs the player's profile information 
                         * More detail is below in each of the 5 sections
+                        * NOTE: Part 4 should really be a txt file that it pulls in as it will 
+                        *       allow for formatting instead of it being one long string. Not sure
+                        *       currently how to do that except to have the php generate a txt file
+                        *       that is updated everytime the user pressed the submit button and
+                        *       the database stores the txt filename and then echos an <a href="">
+                        *       tag, parses through the file, and then displays it out to the user.
                         *************************************************************************/
                     
                         // 1) Takes the form information from login.php (username and password that was entered in) 
@@ -121,6 +125,8 @@ Originally the PHP that was used for this page was the php that was found in the
                         ?>
                     </div>
                     <br>
+                    
+                    <!-- This will be used for submitting more instant messages -->
                     <form action="" method="post">
                         <textarea rows="5" name="instant_message" style="width: 100%">Type here!</textarea>
                         <input type="submit">
