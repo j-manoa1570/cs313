@@ -7,7 +7,7 @@ $db = get_db();
 
 
 <!--
-Some parts of the php is not what I created. It is taken from the instructor file for accessing a database from the Week 05 Team Activity.
+The general format of the php to postgresql is taken from the instructor's solution from Week 04 Team Activity. I have modified it to fit my application so that my tables would function.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,13 +22,13 @@ Some parts of the php is not what I created. It is taken from the instructor fil
                 <div id="containercol">
                     <?php
                         
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];        
+//                    $username = $_POST['username'];
+//                    $password = $_POST['password'];        
 //                    if ($choice == null)
 //                        $choice = 1;
-                        
-                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
-                    $choice = $choice[id];
+//                        
+//                    $user_id = $db->prepare("SELECT id FROM player WHERE username=$username AND password=$password");
+//                    $choice = $choice[id];
                     $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=$choice");
                     $statement->execute();
                         // Go through each result
