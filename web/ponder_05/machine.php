@@ -43,17 +43,17 @@ The general format of the php to postgresql is taken from the instructor's solut
                         echo '<p>' . $row['bio'] . '</p>';
                     }                   
 //                    $choice = $choice['id'];
-                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=1");
-       //             $statement->execute();
+//                    $statement = $db->prepare("SELECT fname, lname, bio FROM profile WHERE id=1");
+//                    $statement->execute();
                         // Go through each result
-                    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                    {
-                            // The variable "row" now holds the complete record for that
-                            // row, and we can access the different values based on their
-                            // name
-                        echo '<p>' . $row['fname'] . ' ' . $row['lname'];
-                        echo '<p>' . $row['bio'] . '</p>';
-                    }
+//                    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+//                    {
+//                            // The variable "row" now holds the complete record for that
+//                            // row, and we can access the different values based on their
+//                            // name
+//                        echo '<p>' . $row['fname'] . ' ' . $row['lname'];
+//                        echo '<p>' . $row['bio'] . '</p>';
+//                    }
                     ?>
                 </div>
             </div>
