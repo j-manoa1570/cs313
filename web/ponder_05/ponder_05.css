@@ -25,6 +25,7 @@ a:visited {
 .containercol {
     display:flex;
     flex-flow: column nowrap;
+    width: 100%;
 }
 
 #standard {
@@ -44,6 +45,7 @@ a:visited {
     background-color: #000000;
     border-radius: 5px;
     width: 100%;
+    padding-bottom: 100%;
 }
 
 #side {
