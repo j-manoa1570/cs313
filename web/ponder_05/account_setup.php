@@ -54,7 +54,7 @@
                     Confirm Password:
                     <input type="password" name="confirm"></p>
                     <div class="button">
- //                       <a href="">Create Account</a>
+        <!-- <a href="">Create Account</a> -->
                     </div>
                 <input type="submit" value="submit">
             </form>
@@ -65,4 +65,20 @@
     </body>
 </html>
 
+<?php
 
+$password = $_POST['new_pass'];
+$user = $_POST['new_user'];
+
+if (!isset($user) || $user = "" || !isset($password) || $password = "")
+{
+    header("Location: account_setup.php");
+    die();
+}
+
+
+
+
+
+
+?>
