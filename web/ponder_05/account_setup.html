@@ -1,15 +1,13 @@
-<!-- Login page in order to access user account -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="ponder_05.css">
         <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="ponder_05.css">
         <link rel="icon" href="welcome_to_the_machine.png">
-        <title>Welcome to Machine!</title>
+        <title>Machine Sign Up</title>
     </head>
     <body>
-        
-        
+    
         <header id="headerround">
             <div class="dropdown">
                 <button class="dropbtn">Profile</button>
@@ -42,24 +40,27 @@
        </header>
         
         
-        
+        <!-- Signup Page -->
         <div id="standard2">
             <div id="center">
-                <p>Welcome to Machine! Your one stop for increased productivity!</p>
-                <form action="machine.php" method="post">
-                    <p>Username:
-                        <input type="text" name="username">
-                        <br/>
-                        Password:
-                        <input type="password" name="password"></p>
+            <p>In order to create an account, we need a little bit of information:</p>
+            <form action="" method="post">
+                <p>Username:
+                    <input type="text" name="username">
+                    <br/>
+                    Password:
+                    <input type="password" name="password">
+                    <br/>
+                    Confirm Password:
+                    <input type="password" name="confirm"></p>
                     <div class="button">
-                        <a href="machine.php">Sign In</a>
+                        Sign In
                     </div>
-                        <!-- <input type="submit" value="submit"/> -->
-                </form>
+            <!--        <input type="submit" value="submit"> -->
+            </form>
+                <br/>
                 <hr/>
-                <p>Don't have an account? Create one <a href="account_setup.html">here</a>.</p>
-            </div>
+        </div>
         </div>
     </body>
 </html>

@@ -1,13 +1,15 @@
-<!-- Login page in order to access user account -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <link rel="stylesheet" href="ponder_05.css">
+        <link rel="stylesheet" href="ponder_05.css"> 
         <link rel="stylesheet" href="login.css">
         <link rel="icon" href="welcome_to_the_machine.png">
-        <title>Welcome to Machine!</title>
+        <title>Update Profile</title>
+        
     </head>
+    
     <body>
+        
         
         
         <header id="headerround">
@@ -42,24 +44,39 @@
        </header>
         
         
+        <!-- This is the form that is used to update the user's profile. -->
+
         
         <div id="standard2">
             <div id="center">
-                <p>Welcome to Machine! Your one stop for increased productivity!</p>
-                <form action="machine.php" method="post">
-                    <p>Username:
-                        <input type="text" name="username">
+                <form action="" method="post">
+                    <p>Profile Picture:
+                        <input type="text" name="new_picture">
                         <br/>
-                        Password:
-                        <input type="password" name="password"></p>
-                    <div class="button">
-                        <a href="machine.php">Sign In</a>
-                    </div>
-                        <!-- <input type="submit" value="submit"/> -->
+                        First Name:
+                        <input type="text" name="new_fname">
+                        <br/>
+                        Last Name:
+                        <input type="text" name="new_lname">
+                        <br/>
+                        Title:
+                        <input type="text" name="new_title">
+                        <br/>
+                        Location:
+                        <input type="text" name="new_location">
+                        <br/>
+                        Email:
+                        <input type="text" name="new_email">
+                        <br/>
+                        Bio:
+                        <input type="text" name="new_bio">
+                        <br/>
+                        Phone:
+                        <input type="text" name="new_phone">
+                    </p>
                 </form>
-                <hr/>
-                <p>Don't have an account? Create one <a href="account_setup.html">here</a>.</p>
             </div>
         </div>
     </body>
+    
 </html>
