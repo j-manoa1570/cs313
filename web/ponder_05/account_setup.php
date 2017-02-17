@@ -49,12 +49,9 @@
                     <input type="text" name="new_user">
                     <br/>
                     Password:
-                    <input type="password" name="new_pass">
-                    <br/>
-                    Confirm Password:
-                    <input type="password" name="confirm"></p>
-                    <div class="button">
-        <!-- <a href="">Create Account</a> -->
+                    <input type="password" name="new_pass"></p>
+          <!--          <div class="button">
+         <a href="">Create Account</a> -->
                     </div>
                 <input type="submit" value="submit">
             </form>
