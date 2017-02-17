@@ -44,7 +44,7 @@
         <div id="standard2">
             <div id="center">
             <p>In order to create an account, we need a little bit of information:</p>
-            <form action="" method="post">
+            <form action="account_creation.php" method="post">
                 <p>Username:
                     <input type="text" name="new_user">
                     <br/>
@@ -65,20 +65,3 @@
     </body>
 </html>
 
-<?php
-
-$password = $_POST['new_pass'];
-$user = $_POST['new_user'];
-
-if (!isset($user) || $user = "" || !isset($password) || $password = "")
-{
-    header("Location: account_setup.php");
-    die();
-}
-
-
-
-
-
-
-?>
