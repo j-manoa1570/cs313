@@ -85,7 +85,7 @@ try {
 	$statement->bindValue(':username', $username);
 	$statement->bindValue(':password', $passwordHash);
 	$statement->execute();
-	$row = statement->fetch(PDO::FETCH_ASSOC);
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
 	$statement->closeCursor();
 } catch (PDOException $e) {
 	// If the username and password are not inserted correctly, throw error message
