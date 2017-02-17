@@ -10,7 +10,7 @@ if (!isset($user) || $user = "" || !isset($password) || $password = "")
 }
 
 
-$username = htmlspecialchars($username);
+$user = htmlspecialchars($user);
 
 $hashed = password_hash($password, PASSWORD_DEFAULT);
 
@@ -22,7 +22,7 @@ $new_account->bindValue(':username', $username);
 $new_account->bindValue(':hashed', $hashed);
 $new_account->execute();
 
-header('Location: login.html');
+header("Location: login.html");
 die();
 
 
