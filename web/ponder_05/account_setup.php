@@ -46,17 +46,17 @@
             <p>In order to create an account, we need a little bit of information:</p>
             <form action="" method="post">
                 <p>Username:
-                    <input type="text" name="username">
+                    <input type="text" name="new_user">
                     <br/>
                     Password:
-                    <input type="password" name="password">
+                    <input type="password" name="new_pass">
                     <br/>
                     Confirm Password:
                     <input type="password" name="confirm"></p>
                     <div class="button">
-                        <a href="">Create Account</a>
+ //                       <a href="">Create Account</a>
                     </div>
-            <!--        <input type="submit" value="submit"> -->
+                <input type="submit" value="submit">
             </form>
                 <br/>
                 <hr/>
@@ -66,8 +66,8 @@
 </html>
 
 <?php
-$password = $_POST[‘password’];
-$username = $_POST[‘username’];
+$password = $_POST[‘new_pass’];
+$username = $_POST[‘new_user’];
 // if username or password are empty, then redirect back to signup page
 If (!isset($username) || $username = “” || !isset($password) || $password = “”)
 {
@@ -80,7 +80,7 @@ $db = get_db();
 
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 try {
-	$newuserSQL = ‘INSERT INTO users (Username, Password) VALUES (:username, :password)’;
+	$newuserSQL = ‘INSERT INTO player (username, password) VALUES (:username, :password)’;
 	$statement = $db->prepare($newuserSQL);
 	$statement->bindValue(‘:username’, $username);
 	$statement->bindValue(‘:password’, $passwordHash);
