@@ -66,12 +66,12 @@
 </html>
 
 <?php
-$password = $_POST[‘new_pass’];
-$username = $_POST[‘new_user’];
+$password = $_POST['new_pass'];
+$username = $_POST['new_user'];
 // if username or password are empty, then redirect back to signup page
-If (!isset($username) || $username = “” || !isset($password) || $password = “”)
+If (!isset($username) || $username = "" || !isset($password) || $password = "")
 {
-	header(“Location: account_setup.php”);
+	header("Location: account_setup.php");
 	die();
 }
 require("heroku_access.php"); // connect to database
@@ -80,18 +80,18 @@ $db = get_db();
 
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 try {
-	$newuserSQL = ‘INSERT INTO player (username, password) VALUES (:username, :password)’;
+	$newuserSQL = 'INSERT INTO player (username, password) VALUES (:username, :password)';
 	$statement = $db->prepare($newuserSQL);
-	$statement->bindValue(‘:username’, $username);
-	$statement->bindValue(‘:password’, $passwordHash);
+	$statement->bindValue(':username', $username);
+	$statement->bindValue(':password', $passwordHash);
 	$statement->execute();
 	$row = statement->fetch(PDO::FETCH_ASSOC);
 	$statement->closeCursor();
 } catch (PDOException $e) {
 	// If the username and password are not inserted correctly, throw error message
 	$error_message = $e->getMessage();
-	Echo “<p>Database error: $error_message </p>”;
+	Echo "<p>Database error: $error_message </p>";
 }
-header(“Location: login.html”);
+header("Location: login.html");
 die();
 ?>
