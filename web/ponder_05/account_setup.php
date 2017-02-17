@@ -46,10 +46,10 @@
             <p>In order to create an account, we need a little bit of information:</p>
             <form action="account_creation.php" method="post">
                 <p>Username:
-                    <input type="text" name="new_user">
+                    <input type="text" id="new_user" name="new_user">
                     <br/>
                     Password:
-                    <input type="password" name="new_pass"></p>
+                    <input type="password" name="new_pass" id="new_pass"></p>
           <!--          <div class="button">
          <a href="">Create Account</a> -->
                     </div>
