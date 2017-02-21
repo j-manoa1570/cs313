@@ -6,6 +6,7 @@ $username = $_POST['new_user'];
 if (!isset($username) || $username == "" 
     || !isset($password) || $password == "")
 {
+    echo "<script type='text/javascript'>alert('$message');</script>";
     header("Location: account_setup.php");
     die();
 }
