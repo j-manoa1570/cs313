@@ -44,15 +44,15 @@
         <div id="standard2">
             <div id="center">
             <p>In order to create an account, we need a little bit of information:</p>
-            <form action="account_creation.php" method="post">
+            <form action="account_creation.php" id="accountSetup" method="post">
                 <p>Username:
                     <input type="text" id="new_user" name="new_user">
                     <br/>
                     Password:
                     <input type="password" name="new_pass" id="new_pass"></p>
           <!--          <div class="button">
-         <a href="">Create Account</a> -->
-                    </div>
+         <a href="">Create Account</a> 
+                    </div>-->
                 <input type="submit" value="submit">
             </form>
                 <br/>
