@@ -67,7 +67,8 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
                     //    from database.
-                    $user_id = $db->prepare('SELECT id FROM player WHERE username= :username AND password= :password');
+                    $query = 'SELECT id FROM player WHERE username= :username AND password= :password';
+                    $user_id = $db->prepare($query);
                     $user_id->bindValue(':username', $username);
                     $user_id->bindvalue(':password', $password);
                     
@@ -131,7 +132,8 @@ Originally the PHP that was used for this page was the php that was found in the
                         // 2) Preparing to access the database by declaring what columns are being accessed from
                         //    what table under what conditions. Variables are bound so that we can access data
                         //    from database.
-                        $user_id = $db->prepare('SELECT id FROM player WHERE username= :username AND password= :password');
+                        $query = 'SELECT id FROM player WHERE username= :username AND password= :password';
+                        $user_id = $db->prepare($query);
                         $user_id->bindValue(':username', $username);
                         $user_id->bindvalue(':password', $password);
                     
@@ -144,14 +146,15 @@ Originally the PHP that was used for this page was the php that was found in the
                         // 4) This is a combination of steps 2 and 3 but this time to the profile table
                         //    so we can retreive data on the player's profile.
                         $id = $row['id'];
-                        $user_profile = $db->prepare('SELECT communication FROM conversation WHERE player1_id= :id OR player2_id = :id');
+                        $query = 'SELECT dcon FROM conversation WHERE player_id= :id';
+                        $user_profile = $db->prepare($query);
                         $user_profile->bindValue(':id', $id);
                         $user_profile->execute();
                         $row_conversation = $user_profile->fetch(PDO::FETCH_ASSOC);
                         $user_profile->closeCursor();
                        
                         // 5) All of the retrieved data is outputted to the screen for the player.
-                        echo '<p>' . $row_conversation['communication'] . '</p>';
+                        //echo '<p>' . $row_conversation['communication'] . '</p>';
                         ?>
                     </div>
                     <br>
