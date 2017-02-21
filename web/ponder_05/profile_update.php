@@ -74,6 +74,7 @@
                         Phone:
                         <input type="text" name="new_phone">
                     </p>
+                    <input type="submit">
                 </form>
             </div>
         </div>

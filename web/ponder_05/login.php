@@ -43,6 +43,9 @@
         
         <br/>
         
+        
+        <!-- This is the login credentials page to login. Option for creating a new account is also available. -->
+        
         <div id="standard2">
             <div id="center">
                 <p>Welcome to Machine! Your one stop for increased productivity!</p>
@@ -51,11 +54,9 @@
                         <input type="text" name="username">
                         <br/>
                         Password:
-                        <input type="password" name="password"></p>
-                    <div class="button">
-                        <a href="machine.php">Sign In</a>
-                    </div>
-                        <!-- <input type="submit" value="submit"/> -->
+                        <input type="password" name="password">
+                    </p>
+                    <input type="submit">
                 </form>
                 <hr/>
                 <p>Don't have an account? Create one <a href="account_setup.php">here</a>.</p>
