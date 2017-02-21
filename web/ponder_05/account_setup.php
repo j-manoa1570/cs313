@@ -45,16 +45,16 @@
             <div id="center">
             <p>In order to create an account, we need a little bit of information:</p>
             <form action="account_creation.php" id="accountSetup" method="post">
-                <p>Username:
-                    <input type="text" id="new_user" name="new_user">
-                    <br/>
-                    Password:
-                    <input type="password" name="new_pass" id="new_pass"></p>
-          <!--          <div class="button">
-         <a href="">Create Account</a> 
-                    </div>-->
-                <input type="submit" value="submit">
-            </form>
+                <input type="text" id="new_user" name="new_user" placeholder="Username">
+                <label for="new_user">Username</label>
+                <br /><br />
+
+                <input type="password" id="new_pass" name="new_pass" placeholder="Password">
+                <label for="new_pass">Password</label>
+                <br /><br />
+
+                <input type="submit" value="Create Account" />
+                </form>
                 <br/>
                 <hr/>
         </div>
