@@ -33,8 +33,8 @@ Originally the PHP that was used for this page was the php that was found in the
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="ponder_05.css">
-        <link rel="stylesheet" href="login.css">
+        <!--<link rel="stylesheet" href="ponder_05.css">
+        <link rel="stylesheet" href="login.css">-->
         <link rel="icon" href="welcome_to_the_machine.png">
         <title>Machine</title>
     </head>
@@ -82,7 +82,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
                     $id = $row['id'];
-                    $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title, phone FROM profile WHERE player_id= :id');
+                    $user_profile = $db->prepare('SELECT fname, lname, location, email, bio, title FROM profile WHERE player_id= :id');
                     $user_profile->bindValue(':id', $id);
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
@@ -91,12 +91,12 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 5) All of the retrieved data is outputted to the screen for the player.
                     echo '<p><strong>' . 'Name:</strong> ' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
-                    echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
+                    //echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
                     echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>';
                     ?>
                     <div class="button">
-                        <a href="profile_update.html">Update Profile</a>
+                        <a href="profile_update.php">Update Profile</a>
                     </div>
                 </div>
             </div>
