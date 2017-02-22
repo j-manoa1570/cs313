@@ -37,7 +37,7 @@ Originally the PHP that was used for this page was the php that was found in the
                      * NOTE: This should really be in a seperate file that contains php functions
                      *       since this is used in a section below again almost line for line.
                      *************************************************************************/
-                    
+                   /* 
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
                     $username = $_POST['username'];
@@ -50,7 +50,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     $hashed = $get_password->fetch(PDO::FETCH_ASSOC);
                     $get_password->closeCursor();
                     
-                   /* $hashpass = $hashed['password'];
+                    $hashpass = $hashed['password'];
                     
                     
                     if(!password_verify($password, $hashpass))
