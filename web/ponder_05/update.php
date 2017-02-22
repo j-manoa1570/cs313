@@ -17,6 +17,7 @@ if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($
     die();
 }
 else {
+    try {
     if (isset($fname) && $fname != "")
     {
         $query = 'UPDATE profile SET fname = :fname WHERE profile_id = 1';
@@ -24,7 +25,16 @@ else {
         $new->bindValue(':fname', $fname);
         $new->execute();
     }
+    }
+    catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
 
+    try {
     if (isset($lname) && $lname != "")
     {
         $query = 'UPDATE profile SET lname = :lname WHERE profile_id = 1';
@@ -32,7 +42,15 @@ else {
         $new->bindValue(':lname', $lname);
         $new->execute();
     }
-*/
+    }
+    catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
+        
     try 
     {
         if (isset($title) && $title != "")
