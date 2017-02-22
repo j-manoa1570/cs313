@@ -19,7 +19,7 @@ if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($
 else {
     if (isset($fname) && $fname != "")
     {
-        $query = 'INSERT INTO profile(fname) VALUES(:fname) WHERE profile_id = 1';
+        $query = 'UPDATE profile SET fname = :fname WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
         $new->execute();
@@ -27,7 +27,7 @@ else {
 
     if (isset($lname) && $lname != "")
     {
-        $query = 'INSERT INTO profile(lname) VALUES(:lname) WHERE profile_id = 1';
+        $query = 'UPDATE profile SET lname = :lname WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':lname', $lname);
         $new->execute();
@@ -37,7 +37,7 @@ else {
     {
         if (isset($title) && $title != "")
         {
-            $query = 'update profile set title= :title where player_id = 1';
+            $query = 'UPDATE profile SET title= :title WHERE player_id = 1';
             $new = $db->prepare($query);
             $new->bindValue(':title', $title);
             $new->execute();
@@ -53,7 +53,7 @@ catch (Exception $ex)
 
     if (isset($email) && $email != "")
     {
-        $query = 'INSERT INTO profile(email) VALUES(:email) WHERE profile_id = 1';
+        $query = 'UPDATE profile SET email= :email WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':email', $email);
         $new->execute();
@@ -61,7 +61,7 @@ catch (Exception $ex)
 
     if (isset($bio) && $bio != "")
     {
-        $query = 'INSERT INTO profile(bio) VALUES(:bio) WHERE profile_id = 1';
+        $query = 'UPDATE profile SET bio = :bio WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
         $new->execute();
