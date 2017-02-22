@@ -41,7 +41,7 @@ else {
         $query = 'INSERT INTO profile(title) VALUES(:title) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':title', $title);
-        //$new->execute();
+        $new->execute();
     }
     /*
     if (isset($email) && $email != "")
