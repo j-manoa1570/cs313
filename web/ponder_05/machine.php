@@ -36,37 +36,18 @@ Originally the PHP that was used for this page was the php that was found in the
                      * More detail is below in each of the 5 sections
                      * NOTE: This should really be in a seperate file that contains php functions
                      *       since this is used in a section below again almost line for line.
-                     *************************************************************************
+                     *************************************************************************/
                     
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
                     $username = $_POST['username'];
-                    /*$password = $_POST['password'];
-                    
-                    $query = 'SELECT password FROM player WHERE username = :username';
-                    $get_password = $db->prepare($query);
-                    $get_password = bindValue(':username', $username);
-                    $get_password->execute();
-                    $hashed = $get_password->fetch(PDO::FETCH_ASSOC);
-                    $get_password->closeCursor();
-                    
-                    $hashpass = $hashed['password'];
-                    
-                    
-                    /*if(!password_verify($password, $hashpass))
-                    {
-                        header("Location: login.php");
-                        die();
-                    }
-                    
-                    
+                        
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
                     //    from database.
                     $query = 'SELECT id FROM player WHERE username= :username';
                     $user_id = $db->prepare($query);
                     $user_id->bindValue(':username', $username);
-                   // $user_id->bindvalue(':password', $hashpass);
                     
                     // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
                     //    variable, and SQL database connection is closed.
@@ -79,7 +60,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
                     $id = $row['id'];
-                    $query = 'SELECT fname, lname FROM profile WHERE player_id= :id';
+                    $query = 'SELECT fname, lname, title, phone, email, bio FROM profile WHERE player_id= :id';
                     $user_profile = $db->prepare($query);
                     $user_profile->bindValue(':id', $id);
                     $user_profile->execute();
@@ -91,7 +72,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
                     echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
-                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; */
+                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; 
                     ?>
                     <div class="button">
                         <a href="profile_update.php">Update Profile</a>
@@ -124,7 +105,6 @@ Originally the PHP that was used for this page was the php that was found in the
                         // 1) Takes the form information from login.php (username and password that was entered in) 
                         //    and sets it to variables to be used for pinging the database.
                         $username = $_POST['username'];
-                        //$password = $_POST['password'];
                         
                         // 2) Preparing to access the database by declaring what columns are being accessed from
                         //    what table under what conditions. Variables are bound so that we can access data
@@ -132,7 +112,6 @@ Originally the PHP that was used for this page was the php that was found in the
                         $query = 'SELECT id FROM player WHERE username= :username';
                         $user_id = $db->prepare($query);
                         $user_id->bindValue(':username', $username);
-                        //$user_id->bindvalue(':password', $password);
                     
                         // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
                         //    variable, and SQL database connection is closed.
