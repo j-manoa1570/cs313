@@ -45,16 +45,7 @@ else {
         $new->bindValue(':title', $title);
         $new->execute();
     }
-
-    if (isset($location) && $location != "")
-    {
-        $location = htmlspecialchars($location);
-        $query = 'INSERT INTO profile(location) VALUES(:location)';
-        $new = $db->prepare($query);
-        $new->bindValue(':location', $location);
-        $new->execute();
-    }
-
+    
     if (isset($email) && $email != "")
     {
         $email = htmlspecialchars($email);
@@ -70,15 +61,6 @@ else {
         $query = 'INSERT INTO profile(bio) VALUES(:bio)';
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
-        $new->execute();
-    }
-
-    if (isset($phone) && $phone != "")
-    {
-        $phone = htmlspecialchars($phone);
-        $query = 'INSERT INTO profile(phone) VALUES(:phone)';
-        $new = $db->prepare($query);
-        $new->bindValue(':phone', $phone);
         $new->execute();
     }
 }

@@ -62,17 +62,11 @@
                         Title:
                         <input type="text" name="new_title">
                         <br/>
-                        Location:
-                        <input type="text" name="new_location">
-                        <br/>
                         Email:
                         <input type="text" name="new_email">
                         <br/>
                         Bio:
                         <input type="text" name="new_bio">
-                        <br/>
-                        Phone:
-                        <input type="text" name="new_phone">
                     </p>
                     <input type="submit">
                 </form>
