@@ -9,7 +9,7 @@ $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
 
-if (isset($title && $title != ''))
+if (isset($title && $title != ""))
 {
     echo "<p>Hello World!";
 }
