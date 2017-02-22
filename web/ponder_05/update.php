@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("heroku_access.php");
 $db = get_db();
 
