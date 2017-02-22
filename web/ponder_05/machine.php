@@ -58,7 +58,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         header("Location: login.php");
                         die();
                     }
-                    */
+                    
                     
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
@@ -91,7 +91,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
                     echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
-                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; 
+                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; */
                     ?>
                     <div class="button">
                         <a href="profile_update.php">Update Profile</a>
