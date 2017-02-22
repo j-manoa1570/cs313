@@ -49,7 +49,7 @@
         
         <div id="standard2">
             <div id="center">
-                <form action="" method="post">
+                <form action="update.php" method="post">
                     <p>Profile Picture:
                         <input type="text" name="new_picture">
                         <br/>
