@@ -39,10 +39,10 @@ else {
     {
         if (isset($title) && $title != "")
         {
-            $title = htmlspecialchars($title);
-            $query = 'update profile set title="Anything" where player_id = 1';
+           // $title = htmlspecialchars($title);
+            $query = 'update profile set title= :title where player_id = 1';
             $new = $db->prepare($query);
-  //          $new->bindValue(':title', $title);
+            $new->bindValue(':title', $title);
             $new->execute();
         }
     }
