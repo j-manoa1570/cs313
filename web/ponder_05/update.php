@@ -9,9 +9,10 @@ $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
 
-if (isset($title))
+if (isset($title && $title == ""))
 {
-    echo "<p>Hello World!";
+    header('Location: login.php');
+    die();
 }
 /*
 if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "");
