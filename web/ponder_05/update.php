@@ -40,7 +40,7 @@ else {
         if (isset($title) && $title != "")
         {
             $title = htmlspecialchars($title);
-            $query = 'UPDATE profile SET title= "Stuff" WHERE id = 1';
+            $query = 'update profile set title="Anything" where player_id = 1';
             $new = $db->prepare($query);
   //          $new->bindValue(':title', $title);
             $new->execute();
