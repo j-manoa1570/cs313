@@ -1,14 +1,18 @@
 <?php
 require "heroku_access.php";
 $db = get_db();
+session_start();
 
+/*
 function get_id()
 {
     // 1) Takes the form information from login.php (username and password that was entered in) 
     //    and sets it to variables to be used for pinging the database.
     $username = $_POST['username'];
     $password = $_POST['password'];
-                        
+    
+    //$hashed = (password ver)
+    
     // 2) Preparing to access the database by declaring what columns are being accessed from
     //    what table under what conditions. Variables are bound so that we can access data
     //    from database.
@@ -24,7 +28,7 @@ function get_id()
     
     $id = $row['id'];
     return $id;
-}
+}*/
 ?>
 
 <!--
@@ -64,6 +68,18 @@ Originally the PHP that was used for this page was the php that was found in the
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     
+                    $query = 'SELECT password FROM player WHERE username = :username';
+                    $get_password = $db->prepare($query);
+                    $get_password = bindValue(':username', $username);
+                    $get_password->execute();
+                    $hashed = $get_password->fetch(PDO::FETCH_ASSOC);
+                    $get_password->closeCursor();
+                    
+                    $hashpass = $hashed['password'];
+                    
+                    
+                    
+                    
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
                     //    from database.
@@ -83,7 +99,8 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
                     $id = $row['id'];
-                    $user_profile = $db->prepare('SELECT fname, lname FROM profile WHERE player_id= :id');
+                    $query = 'SELECT fname, lname FROM profile WHERE player_id= :id';
+                    $user_profile = $db->prepare($query);
                     $user_profile->bindValue(':id', $id);
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
