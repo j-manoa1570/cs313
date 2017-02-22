@@ -4,31 +4,6 @@ $db = get_db();
 session_start();
 
 
-function get_id()
-{
-    // 1) Takes the form information from login.php (username and password that was entered in) 
-    //    and sets it to variables to be used for pinging the database.
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    //$hashed = (password ver)
-    
-    // 2) Preparing to access the database by declaring what columns are being accessed from
-    //    what table under what conditions. Variables are bound so that we can access data
-    //    from database.
-    $user_id = $db->prepare('SELECT id FROM player WHERE username= :username AND password= :password');
-    $user_id->bindValue(':username', $username);
-    $user_id->bindvalue(':password', $password);
-                    
-    // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
-    //    variable, and SQL database connection is closed.
-    $user_id->execute();
-    $row = $user_id->fetch(PDO::FETCH_ASSOC);
-    $user_id->closeCursor();
-    
-    $id = $row['id'];
-    return $id;
-}
 ?>
 
 <!--
