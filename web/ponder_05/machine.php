@@ -41,7 +41,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
                     $username = $_POST['username'];
-                    $password = $_POST['password'];
+                    //$password = $_POST['password'];
                     
                     $query = 'SELECT password FROM player WHERE username = :username';
                     $get_password = $db->prepare($query);
@@ -50,7 +50,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     $hashed = $get_password->fetch(PDO::FETCH_ASSOC);
                     $get_password->closeCursor();
                     
-                    $hashpass = $hashed['password'];
+                   /* $hashpass = $hashed['password'];
                     
                     
                     if(!password_verify($password, $hashpass))
@@ -58,15 +58,15 @@ Originally the PHP that was used for this page was the php that was found in the
                         header("Location: login.php");
                         die();
                     }
-                    
+                    */
                     
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
                     //    from database.
-                    $query = 'SELECT id FROM player WHERE username= :username AND password= :password';
+                    $query = 'SELECT id FROM player WHERE username= :username';
                     $user_id = $db->prepare($query);
                     $user_id->bindValue(':username', $username);
-                    $user_id->bindvalue(':password', $hashpass);
+                   // $user_id->bindvalue(':password', $hashpass);
                     
                     // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
                     //    variable, and SQL database connection is closed.
