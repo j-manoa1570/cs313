@@ -3,7 +3,7 @@ require "heroku_access.php";
 $db = get_db();
 session_start();
 
-/*
+
 function get_id()
 {
     // 1) Takes the form information from login.php (username and password that was entered in) 
@@ -28,7 +28,7 @@ function get_id()
     
     $id = $row['id'];
     return $id;
-}*/
+}
 ?>
 
 <!--
