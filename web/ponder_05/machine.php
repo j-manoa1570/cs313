@@ -41,7 +41,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
                     $username = $_POST['username'];
-                    //$password = $_POST['password'];
+                    /*$password = $_POST['password'];
                     
                     $query = 'SELECT password FROM player WHERE username = :username';
                     $get_password = $db->prepare($query);
