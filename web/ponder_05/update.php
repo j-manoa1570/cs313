@@ -8,8 +8,9 @@ $lname = $_POST['new_lname'];
 $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
+$true = true;
 
-if (isset($title && $title == ""))
+if (isset($title && $true))
 {
     header('Location: login.php');
     die();
