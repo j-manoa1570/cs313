@@ -68,11 +68,11 @@ Originally the PHP that was used for this page was the php that was found in the
                     $user_profile->closeCursor();
                     
                     // 5) All of the retrieved data is outputted to the screen for the player.
-                    echo '<p><strong>' . 'Name:</strong> ' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
+                   /* echo '<p><strong>' . 'Name:</strong> ' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
                     echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
-                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; 
+                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; */
                     ?>
                     <div class="button">
                         <a href="profile_update.php">Update Profile</a>
