@@ -30,7 +30,7 @@ else {
 {
 	// Please be aware that you don't want to output the Exception message in
 	// a production environment
-	echo "Error with DB. Details: $ex";
+	echo "Error with 'fname' Details: $ex";
 	die();
 }
 
@@ -47,7 +47,7 @@ else {
 {
 	// Please be aware that you don't want to output the Exception message in
 	// a production environment
-	echo "Error with DB. Details: $ex";
+	echo "Error with 'lname' Details: $ex";
 	die();
 }
         
@@ -65,10 +65,12 @@ catch (Exception $ex)
 {
 	// Please be aware that you don't want to output the Exception message in
 	// a production environment
-	echo "Error with DB. Details: $ex";
+	echo "Error with 'title' Details: $ex";
 	die();
 }
 
+    try
+    {
     if (isset($email) && $email != "")
     {
         $query = 'UPDATE profile SET email= :email WHERE profile_id = 1';
@@ -76,7 +78,17 @@ catch (Exception $ex)
         $new->bindValue(':email', $email);
         $new->execute();
     }
+    }
+    catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with 'email' Details: $ex";
+	die();
+}
 
+    try
+    {
     if (isset($bio) && $bio != "")
     {
         $query = 'UPDATE profile SET bio = :bio WHERE profile_id = 1';
@@ -84,6 +96,14 @@ catch (Exception $ex)
         $new->bindValue(':bio', $bio);
         $new->execute();
     }
+    }
+    catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with 'bio' Details: $ex";
+	die();
+}
 }
 
 header("Location: machine.php");
