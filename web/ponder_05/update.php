@@ -63,7 +63,7 @@ else {
     }
 }
 
-header("Locaion: machine.php");
+header("Location: machine.php");
 die();
 
 ?>
