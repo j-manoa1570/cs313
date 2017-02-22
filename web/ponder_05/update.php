@@ -37,11 +37,11 @@ else {
 */
     if (isset($title) && $title != "")
     {
-        $title = htmlspecialchars($title);
-        $query = 'INSERT INTO profile(title) VALUES(:title) WHERE profile_id = 1';
-        $new = $db->prepare($query);
-        $new->bindValue(':title', $title);
-        $new->execute();
+        //$title = htmlspecialchars($title);
+        //$query = 'INSERT INTO profile(title) VALUES(:title) WHERE //profile_id = 1';
+        //$new = $db->prepare($query);
+        //$new->bindValue(':title', $title);
+        //$new->execute();
     }
     /*
     if (isset($email) && $email != "")
