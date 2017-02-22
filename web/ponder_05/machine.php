@@ -53,6 +53,11 @@ Originally the PHP that was used for this page was the php that was found in the
                     $hashpass = $hashed['password'];
                     
                     
+                    if(!password_verify($password, $hashpass))
+                    {
+                        header("Location: login.php");
+                        die();
+                    }
                     
                     
                     // 2) Preparing to access the database by declaring what columns are being accessed from
