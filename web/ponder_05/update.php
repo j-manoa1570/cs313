@@ -20,7 +20,7 @@ else {
     if (isset($fname) && $fname != "")
     {
         $fname = htmlspecialchars($fname);
-        $query = 'INSERT INTO profile(fname) VALUES(:fname)';
+        $query = 'INSERT INTO profile(fname) VALUES(:fname) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
         $new->execute();
@@ -29,7 +29,7 @@ else {
     if (isset($lname) && $lname != "")
     {
         $lname = htmlspecialchars($lname);
-        $query = 'INSERT INTO profile(lname) VALUES(:lname)';
+        $query = 'INSERT INTO profile(lname) VALUES(:lname) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':lname', $lname);
         $new->execute();
@@ -38,7 +38,7 @@ else {
     if (isset($title) && $title != "")
     {
         $title = htmlspecialchars($title);
-        $query = 'INSERT INTO profile(title) VALUES(:title)';
+        $query = 'INSERT INTO profile(title) VALUES(:title) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':title', $title);
         $new->execute();
@@ -47,7 +47,7 @@ else {
     if (isset($email) && $email != "")
     {
         $email = htmlspecialchars($email);
-        $query = 'INSERT INTO profile(email) VALUES(:email)';
+        $query = 'INSERT INTO profile(email) VALUES(:email) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':email', $email);
         $new->execute();
@@ -56,7 +56,7 @@ else {
     if (isset($bio) && $bio != "")
     {
         $bio = htmlspecialchars($bio);
-        $query = 'INSERT INTO profile(bio) VALUES(:bio)';
+        $query = 'INSERT INTO profile(bio) VALUES(:bio) WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
         $new->execute();
