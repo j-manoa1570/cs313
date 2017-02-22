@@ -56,7 +56,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     $user_id->closeCursor();
 
                     //$id = get_id();
-                    
+                    /*
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
                     $id = $row['id'];
