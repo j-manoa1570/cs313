@@ -9,8 +9,8 @@ $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
 
-
-if (/*!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && */!isset($title) && $title == "" /*&& !isset($email) && $email == "" && !isset($bio) && $bio == ""*/);
+/*
+if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "");
 {
     echo "<script type='text/javascript'>alert('$message');</script>";
     header("Location: machine.php");
@@ -34,7 +34,7 @@ else {
         $new->bindValue(':lname', $lname);
         $new->execute();
     }
-*/
+
     if (isset($title) && $title != "")
     {
         $title = htmlspecialchars($title);
@@ -60,8 +60,8 @@ else {
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
         $new->execute();
-    }*/
-}
+    }
+}*/
 
 header("Location: machine.php");
 die();
