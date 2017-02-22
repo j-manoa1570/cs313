@@ -6,13 +6,11 @@ $db = get_db();
 $fname = $_POST['new_fname'];
 $lname = $_POST['new_lname'];
 $title = $_POST['new_title'];
-$location = $_POST['new_location'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
-$phone = $_POST['new_phone'];
 
 
-if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($location) && $location == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "" && !isset($phone) && $phone == "");
+if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "");
 {
     echo "<script type='text/javascript'>alert('$message');</script>";
     header("Location: machine.php");
