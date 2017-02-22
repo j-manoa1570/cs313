@@ -36,7 +36,7 @@ Originally the PHP that was used for this page was the php that was found in the
                      * More detail is below in each of the 5 sections
                      * NOTE: This should really be in a seperate file that contains php functions
                      *       since this is used in a section below again almost line for line.
-                     *************************************************************************/
+                     *************************************************************************
                     
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
@@ -57,7 +57,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     {
                         header("Location: login.php");
                         die();
-                    }*/
+                    }
                     
                     
                     // 2) Preparing to access the database by declaring what columns are being accessed from
@@ -119,7 +119,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         *       that is updated everytime the user pressed the submit button and
                         *       the database stores the txt filename and then echos an <a href="">
                         *       tag, parses through the file, and then displays it out to the user.
-                        *************************************************************************
+                        *************************************************************************/
                     
                         // 1) Takes the form information from login.php (username and password that was entered in) 
                         //    and sets it to variables to be used for pinging the database.
