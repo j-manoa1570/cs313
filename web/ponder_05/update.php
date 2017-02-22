@@ -40,7 +40,7 @@ else {
         $title = htmlspecialchars($title);
         $query = 'UPDATE profile SET title= :title WHERE profile_id = 1';
         $new = $db->prepare($query);
-        //$new->bindValue(':title', $title);
+        $new->bindValue(':title', $title);
         $new->execute();
     }
     /*
