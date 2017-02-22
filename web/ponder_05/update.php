@@ -10,20 +10,20 @@ $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
 $true = true;
 
-if (isset($title && $true))
+if (isset($title) && $true)
 {
     header('Location: login.php');
     die();
 }
-/*
-if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "");
+
+if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "")
 {
     echo "<script type='text/javascript'>alert('$message');</script>";
     header("Location: machine.php");
     die();
 }
 else {
- /*   if (isset($fname) && $fname != "")
+    if (isset($fname) && $fname != "")
     {
         $fname = htmlspecialchars($fname);
         $query = 'INSERT INTO profile(fname) VALUES(:fname)';
@@ -49,7 +49,7 @@ else {
         $new->bindValue(':title', $title);
         $new->execute();
     }
-/*    
+    
     if (isset($email) && $email != "")
     {
         $email = htmlspecialchars($email);
@@ -67,7 +67,7 @@ else {
         $new->bindValue(':bio', $bio);
         $new->execute();
     }
-}*/
+}
 
 header("Location: machine.php");
 die();
