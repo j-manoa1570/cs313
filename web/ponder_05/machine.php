@@ -129,7 +129,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         // 2) Preparing to access the database by declaring what columns are being accessed from
                         //    what table under what conditions. Variables are bound so that we can access data
                         //    from database.
-                        $query = 'SELECT id FROM player WHERE username= :username AND password= :password';
+                        $query = 'SELECT id FROM player WHERE username= :username';
                         $user_id = $db->prepare($query);
                         $user_id->bindValue(':username', $username);
                         //$user_id->bindvalue(':password', $password);
