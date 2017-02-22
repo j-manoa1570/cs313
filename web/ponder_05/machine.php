@@ -119,7 +119,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         *       that is updated everytime the user pressed the submit button and
                         *       the database stores the txt filename and then echos an <a href="">
                         *       tag, parses through the file, and then displays it out to the user.
-                        *************************************************************************/
+                        *************************************************************************
                     
                         // 1) Takes the form information from login.php (username and password that was entered in) 
                         //    and sets it to variables to be used for pinging the database.
@@ -151,7 +151,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         $user_profile->closeCursor();
                        
                         // 5) All of the retrieved data is outputted to the screen for the player.
-                        //echo '<p>' . $row_conversation['communication'] . '</p>';
+                        //echo '<p>' . $row_conversation['communication'] . '</p>'; */
                         ?>
                     </div>
                     <br>
