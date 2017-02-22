@@ -35,14 +35,25 @@ else {
         $new->execute();
     }
 */
-    if (isset($title) && $title != "")
+    try 
     {
-        $title = htmlspecialchars($title);
-        $query = 'UPDATE profile SET title= "Stuff" WHERE id = 1';
-        $new = $db->prepare($query);
-        $new->bindValue(':title', $title);
-        $new->execute();
+        if (isset($title) && $title != "")
+        {
+            $title = htmlspecialchars($title);
+            $query = 'UPDATE profile SET title= "Stuff" WHERE id = 1';
+            $new = $db->prepare($query);
+            $new->bindValue(':title', $title);
+            $new->execute();
+        }
     }
+catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
+
     /*
     if (isset($email) && $email != "")
     {
