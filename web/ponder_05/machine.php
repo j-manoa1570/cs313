@@ -36,7 +36,7 @@ Originally the PHP that was used for this page was the php that was found in the
                      * More detail is below in each of the 5 sections
                      * NOTE: This should really be in a seperate file that contains php functions
                      *       since this is used in a section below again almost line for line.
-                     *************************************************************************
+                     *************************************************************************/
                     
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
@@ -61,7 +61,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     $query = 'SELECT id FROM player WHERE username= :username AND password= :password';
                     $user_id = $db->prepare($query);
                     $user_id->bindValue(':username', $username);
-                    $user_id->bindvalue(':password', $password);
+                    $user_id->bindvalue(':password', $hashpass);
                     
                     // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
                     //    variable, and SQL database connection is closed.
@@ -86,7 +86,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
                     echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
-                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; */
+                    echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; 
                     ?>
                     <div class="button">
                         <a href="profile_update.php">Update Profile</a>
