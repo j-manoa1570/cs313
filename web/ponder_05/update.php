@@ -38,7 +38,7 @@ else {
     if (isset($title) && $title != "")
     {
         $title = htmlspecialchars($title);
-        $query = 'INSERT INTO profile(title) VALUES(:title) WHERE profile_id = 1';
+        $query = 'UPDATE profile SET title=:title WHERE profile_id = 1';
         $new = $db->prepare($query);
         $new->bindValue(':title', $title);
         $new->execute();
