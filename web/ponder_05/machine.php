@@ -132,9 +132,6 @@ Originally the PHP that was used for this page was the php that was found in the
                        
                         // 5) All of the retrieved data is outputted to the screen for the player.
                         //echo '<p>' . $row_conversation['communication'] . '</p>'; */
-                        
-                        echo "This is the session variable for id:" . $_SESSION['id'];
-                        echo "This is the session variable for username" . $_SESSION['username'];
                         ?>
                     </div>
                     <br>
