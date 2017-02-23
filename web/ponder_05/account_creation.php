@@ -45,7 +45,7 @@ catch (Exception $ex)
     echo "ERROR: Could not assign 'id' to session variable. Details: $ex";
     die();
 }
-/*
+
 try {
 $query = 'INSERT INTO profile(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);
@@ -57,7 +57,7 @@ catch (Exception $ex)
     echo "ERROR: Could not create new id in profile table. Details: $ex";
     die();
 }
-*/
+
 
 
 header("Location: login.php");
