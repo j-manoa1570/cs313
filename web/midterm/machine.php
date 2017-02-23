@@ -86,8 +86,8 @@ Originally the PHP that was used for this page was the php that was found in the
                         $user_profile->closeCursor();
                        
                         //All of the retrieved data is outputted to the screen for the player.
-                        echo '<p>Your messages display below:</p>';
-                        echo '<p>' . $row_conversation['dcon'] . '</p>';
+                        //echo '<p>Your messages display below:</p>';
+                        echo '<p id="messages">' . $row_conversation['dcon'] . '</p>';
                         ?>
                     </div>
                     <br>
