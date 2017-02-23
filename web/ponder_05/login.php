@@ -7,11 +7,11 @@ $badLogin = false;
 
 // First check to see if we have post variables, if not, just
 // continue on as always.
-if (isset($_POST['username']) && isset($_POST['password']))
+if (isset($_POST['loginname']) && isset($_POST['loginpass']))
 {
 	// they have submitted a username and password for us to check
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = $_POST['loginname'];
+	$password = $_POST['loginpass'];
     
 	// Connect to the DB
 	require("dbConnect.php");
@@ -114,10 +114,10 @@ if (isset($_POST['username']) && isset($_POST['password']))
                 <p>Welcome to Machine! Your one stop for increased productivity!</p>
                 <form action="login.php" method="post">
                     <p>Username:
-                        <input type="text" name="username">
+                        <input type="text" name="loginname">
                         <br/>
                         Password:
-                        <input type="password" name="password">
+                        <input type="password" name="loginpass">
                     </p>
                     <input type="submit">
                 </form>
