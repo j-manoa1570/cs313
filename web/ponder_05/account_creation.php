@@ -23,7 +23,7 @@ $new_account = $db->prepare($query);
 $new_account->bindValue(':username', $username);
 $new_account->bindValue(':password', $hashedPassword);
 $new_account->execute();
-
+/*
 try{
 $query = 'SELECT id FROM player WHERE username = :username';
 $push_id = $db->prepare($query);
@@ -60,7 +60,7 @@ catch (Exception $ex)
     die();
 }
 
-
+*/
 
 header("Location: login.php");
 die();
