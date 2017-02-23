@@ -32,6 +32,7 @@ $push_id->closeCursor();
 
 $id = $row['id'];
 
+
 $query = 'INSERT INTO profile(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);
 $profile_id->bindValue(':id', $id);
