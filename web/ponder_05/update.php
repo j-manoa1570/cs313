@@ -29,7 +29,7 @@ else
         $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
-        $new->bindValue(':id', $ide);
+        $new->bindValue(':id', $id);
         $new->execute();
     }
     
