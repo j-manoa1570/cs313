@@ -8,6 +8,8 @@
     </head>
     <body>
     
+        <!-- Tabs across the top of the page -->
+        
         <header id="headerround">
             <div class="dropdown">
                 <button class="dropbtn">Profile</button>
@@ -47,7 +49,7 @@
             <form action="account_creation.php" id="accountSetup" method="post">
                 <input type="text" id="new_user" name="new_user" placeholder="Username">
                 <label for="new_user">Username</label>
-                <br /><br />
+                <br />
 
                 <input type="password" id="new_pass" name="new_pass" placeholder="Password">
                 <label for="new_pass">Password</label>

@@ -15,7 +15,7 @@ session_start();
     
     <body>
         
-        
+        <!-- This header is the tabs across the top of the page -->
         
         <header id="headerround">
             <div class="dropdown">

@@ -6,6 +6,8 @@ $db = get_db();
 $message = $_POST['instant_message'];
 $id = $_SESSION['id'];
 
+// Updates the dcon column in the database
+
 if (isset($message) && $message != "")
     {
         $query = 'UPDATE conversation SET dcon= :dcon WHERE player_id = :id';

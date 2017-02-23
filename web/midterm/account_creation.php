@@ -1,5 +1,13 @@
 <?php
 
+/***********************************************************
+ * PHP document that creates a new user in the database,
+ * generates a new row for the profile data as well as a 
+ * new row of conversation.
+ **********************************************************/
+
+
+
 $password = $_POST['new_pass'];
 $username = $_POST['new_user'];
 
@@ -14,6 +22,7 @@ $username = htmlspecialchars($username);
 
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+// Creates a new user in the player table
 require("heroku_access.php");
 $db = get_db();
 $query = 'INSERT INTO player(username, password) VALUES(:username, :password)';
@@ -22,6 +31,7 @@ $new_account->bindValue(':username', $username);
 $new_account->bindValue(':password', $hashedPassword);
 $new_account->execute();
 
+// Retrieves newly created id for a user so it can be used for the other tables
 try{
 $query = 'SELECT id FROM player WHERE username = :username';
 $push_id = $db->prepare($query);
@@ -36,6 +46,7 @@ catch (Exception $ex)
     die();
 }
 
+// Assigns the id recently created to a local variable and sessionn variable
 try {
 $id = $row['id'];
 $_SESSION['id'] = $id;
@@ -46,6 +57,7 @@ catch (Exception $ex)
     die();
 }
 
+// Creates a new profile row to store users profile information
 try {
 $query = 'INSERT INTO profile(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);
@@ -58,6 +70,7 @@ catch (Exception $ex)
     die();
 }
 
+// Creates a new conversation row to store a conversation
 try {
 $query = 'INSERT INTO conversation(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);

@@ -3,17 +3,15 @@ require "heroku_access.php";
 $db = get_db();
 session_start();
 
+// Username is saved into the session array variable so it can be accessed later on
 $username = $_SESSION['username'];
                     
-// 2) Preparing to access the database by declaring what columns are being accessed from
-//    what table under what conditions. Variables are bound so that we can access data
-//    from database.
+// Prepare to receive id from data base so we can assign it to the session array variable
 $query = 'SELECT id FROM player WHERE username= :username';
 $user_id = $db->prepare($query);
 $user_id->bindValue(':username', $username);
 
-// 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
-//    variable, and SQL database connection is closed.
+// SQL command is executed and query information is retrieved and then assigned to session
 $user_id->execute();
 $row = $user_id->fetch(PDO::FETCH_ASSOC);
 $user_id->closeCursor();
@@ -42,9 +40,7 @@ Originally the PHP that was used for this page was the php that was found in the
                 <div id="containercol">
                     <?php
                     
-                    // 4) This is a combination of steps 2 and 3 but this time to the profile table
-                    //    so we can retreive data on the player's profile.
-                    //$id = $row['id'];
+                    // Requests from the data base the user profile information
                     $query = 'SELECT fname, lname, title, email, bio FROM profile WHERE player_id= :id';
                     $user_profile = $db->prepare($query);
                     $user_profile->bindValue(':id', $_SESSION['id']);
@@ -55,7 +51,6 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 5) All of the retrieved data is outputted to the screen for the player.
                     echo '<p><strong>' . 'Name:</strong> ' . $row_profile['fname'] . ' ' . $row_profile['lname'] . '</p>';
                     echo '<p><strong>' . 'Title:</strong> ' . $row_profile['title'] . '</p>';
-                    //echo '<p><strong>' . 'Phone:</strong> ' . $row_profile['phone'] . '</p>';
                     echo '<p><strong>' . 'Email:</strong> ' . $row_profile['email'] . '</p>';
                     echo '<p><strong>' . 'Biography:</strong> ' . $row_profile['bio'] . '</p>'; 
                     ?>
@@ -70,10 +65,18 @@ Originally the PHP that was used for this page was the php that was found in the
                 
                 <div id="standard">
                     <div id="standardtext">
+                        
+                        
+                        <!-- PHP is used to generate the information for the messages from the database.
+                             Currently the messaging information that is pulled from the database are in
+                             a column so the message that is sent replaces the last message that is found
+                             in the data base. This can be resolved through the use of JSON but I do not 
+                             currently possess the knowledge to make this possible with JSON so the last 
+                             message sent will have to due. Also, it does not connect with other users -->
+                        
                         <?php
 
-                        // 4) This is a combination of steps 2 and 3 but this time to the profile table
-                        //    so we can retreive data on the player's profile.
+                        // Requests from the data base 'dcon' which is a column that stores the last message sent
                         $id = $row['id'];
                         $query = 'SELECT dcon FROM conversation WHERE player_id= :id';
                         $user_profile = $db->prepare($query);
@@ -82,7 +85,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         $row_conversation = $user_profile->fetch(PDO::FETCH_ASSOC);
                         $user_profile->closeCursor();
                        
-                        // 5) All of the retrieved data is outputted to the screen for the player.
+                        //All of the retrieved data is outputted to the screen for the player.
                         echo '<p>Your messages display below:</p>';
                         echo '<p>' . $row_conversation['dcon'] . '</p>';
                         ?>
