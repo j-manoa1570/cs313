@@ -35,7 +35,7 @@ catch (Exception $ex)
     echo "ERROR: Could not receive id from database (This is found at line 30). Details: $ex";
     die();
 }
-/*
+
 try {
 $id = $row['id'];
 $_SESSION['id'] = $id;
@@ -45,7 +45,7 @@ catch (Exception $ex)
     echo "ERROR: Could not assign 'id' to session variable. Details: $ex";
     die();
 }
-
+/*
 try {
 $query = 'INSERT INTO profile(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);
