@@ -1,11 +1,10 @@
 <?php
 
-
 // Begin session for using the app with first checking for if user is still logged in
-
 session_start();
 
 $badLogin = false;
+
 // First check to see if we have post variables, if not, just
 // continue on as always.
 if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
@@ -13,6 +12,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 	// they have submitted a username and password for us to check
 	$username = $_POST['txtUser'];
 	$password = $_POST['txtPassword'];
+    
 	// Connect to the DB
 	require("dbConnect.php");
 	$db = get_db();
@@ -24,6 +24,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 	{
 		$row = $statement->fetch();
 		$hashedPasswordFromDB = $row['password'];
+        
 		// now check to see if the hashed password matches
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
@@ -48,11 +49,9 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 
 
 
-
-
-
-
 <!-- Login page in order to access user account -->
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -63,6 +62,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
     </head>
     <body>
         
+        <!-- Header stuff -->
         
         <header id="headerround">
             <div class="dropdown">
@@ -103,7 +103,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
         <div id="standard2">
             <div id="center">
                 <p>Welcome to Machine! Your one stop for increased productivity!</p>
-                <form action="machine.php" method="post">
+                <form action="login.php" method="post">
                     <p>Username:
                         <input type="text" name="username">
                         <br/>

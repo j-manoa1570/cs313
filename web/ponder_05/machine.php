@@ -4,6 +4,7 @@ $db = get_db();
 session_start();
 
 
+
 ?>
 
 <!--
@@ -41,7 +42,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
                     $username = $_POST['username'];
-                        
+                    
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
                     //    from database.
