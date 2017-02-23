@@ -31,7 +31,7 @@ $row = $push_id->fetch(PDO::FETCH_ASSOC);
 $push_id->closeCursor();
 
 $id = $row['id'];
-
+$_SESSION['id'] = $id;
 
 $query = 'INSERT INTO profile(player_id) VALUES(:id)';
 $profile_id = $db->prepare($query);

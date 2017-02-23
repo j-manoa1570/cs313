@@ -20,9 +20,10 @@ else {
     try {
     if (isset($fname) && $fname != "")
     {
-        $query = 'UPDATE profile SET fname= :fname WHERE player_id = 1';
+        $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
+        $new->bindValue(':id', $_SESSION['id']);
         $new->execute();
     }
     }
@@ -37,9 +38,10 @@ else {
     try {
     if (isset($lname) && $lname != "")
     {
-        $query = 'UPDATE profile SET lname= :lname WHERE player_id = 1';
+        $query = 'UPDATE profile SET lname= :lname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':lname', $lname);
+        $new->bindValue(':id', $_SESSION['id']);
         $new->execute();
     }
     }
@@ -55,9 +57,10 @@ else {
     {
         if (isset($title) && $title != "")
         {
-            $query = 'UPDATE profile SET title= :title WHERE player_id = 1';
+            $query = 'UPDATE profile SET title= :title WHERE player_id = :id';
             $new = $db->prepare($query);
             $new->bindValue(':title', $title);
+        $new->bindValue(':id', $_SESSION['id']);
             $new->execute();
         }
     }
@@ -73,9 +76,10 @@ catch (Exception $ex)
     {
     if (isset($email) && $email != "")
     {
-        $query = 'UPDATE profile SET email= :email WHERE player_id = 1';
+        $query = 'UPDATE profile SET email= :email WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':email', $email);
+        $new->bindValue(':id', $_SESSION['id']);
         $new->execute();
     }
     }
@@ -91,9 +95,10 @@ catch (Exception $ex)
     {
     if (isset($bio) && $bio != "")
     {
-        $query = 'UPDATE profile SET bio= :bio WHERE player_id = 1';
+        $query = 'UPDATE profile SET bio= :bio WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
+        $new->bindValue(':id', $_SESSION['id']);
         $new->execute();
     }
     }
