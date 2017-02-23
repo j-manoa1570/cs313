@@ -131,13 +131,13 @@ Originally the PHP that was used for this page was the php that was found in the
                         $user_profile->closeCursor();
                        
                         // 5) All of the retrieved data is outputted to the screen for the player.
-                        //echo '<p>' . $row_conversation['communication'] . '</p>'; */
+                        echo '<p>' . $row_conversation['communication'] . '</p>';
                         ?>
                     </div>
                     <br>
                     
                     <!-- This will be used for submitting more instant messages -->
-                    <form action="" method="post">
+                    <form action="message.php" method="post">
                         <textarea rows="5" name="instant_message" style="width: 100%">Type here!</textarea>
                         <input type="submit">
                     </form>

@@ -71,7 +71,7 @@ session_start();
                         <input type="text" name="new_email">
                         <br/>
                         Bio:
-                        <input type="text" name="new_bio">
+                        <textarea rows="4" cols="50" name="new_bio">Enter your biography</textarea>
                     </p>
                     <input type="submit">
                 </form>

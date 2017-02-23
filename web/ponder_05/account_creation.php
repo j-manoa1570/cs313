@@ -58,6 +58,18 @@ catch (Exception $ex)
     die();
 }
 
+try {
+$query = 'INSERT INTO conversation(player_id) VALUES(:id)';
+$profile_id = $db->prepare($query);
+$profile_id->bindValue(':id', $id);
+$profile_id->execute();
+}
+catch (Exception $ex)
+{
+    echo "ERROR: Could not create new id in conversation table. Details: $ex";
+    die();
+}
+
 
 
 header("Location: login.php");
