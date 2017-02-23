@@ -3,7 +3,22 @@ require "heroku_access.php";
 $db = get_db();
 session_start();
 
+$username = $_SESSION['username'];
+                    
+// 2) Preparing to access the database by declaring what columns are being accessed from
+//    what table under what conditions. Variables are bound so that we can access data
+//    from database.
+$query = 'SELECT id FROM player WHERE username= :username';
+$user_id = $db->prepare($query);
+$user_id->bindValue(':username', $username);
 
+// 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
+//    variable, and SQL database connection is closed.
+$user_id->execute();
+$row = $user_id->fetch(PDO::FETCH_ASSOC);
+$user_id->closeCursor();
+
+$_SESSION['id'] = $row['id'];
 
 ?>
 
@@ -41,7 +56,7 @@ Originally the PHP that was used for this page was the php that was found in the
                     
                     // 1) Takes the form information from login.php (username and password that was entered in) 
                     //    and sets it to variables to be used for pinging the database.
-                    $username = $_SESSION['username'];
+                   /* $username = $_SESSION['username'];
                     
                     // 2) Preparing to access the database by declaring what columns are being accessed from
                     //    what table under what conditions. Variables are bound so that we can access data
@@ -55,15 +70,15 @@ Originally the PHP that was used for this page was the php that was found in the
                     $user_id->execute();
                     $row = $user_id->fetch(PDO::FETCH_ASSOC);
                     $user_id->closeCursor();
-
+*/
                     //$id = get_id();
                     
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
-                    $id = $row['id'];
+                    //$id = $row['id'];
                     $query = 'SELECT fname, lname, title, email, bio FROM profile WHERE player_id= :id';
                     $user_profile = $db->prepare($query);
-                    $user_profile->bindValue(':id', $id);
+                    $user_profile->bindValue(':id', $_SESSION['id']);
                     $user_profile->execute();
                     $row_profile = $user_profile->fetch(PDO::FETCH_ASSOC);
                     $user_profile->closeCursor();
@@ -125,7 +140,7 @@ Originally the PHP that was used for this page was the php that was found in the
                         $id = $row['id'];
                         $query = 'SELECT dcon FROM conversation WHERE player_id= :id';
                         $user_profile = $db->prepare($query);
-                        $user_profile->bindValue(':id', $id);
+                        $user_profile->bindValue(':id', $_SESSION['id']);
                         $user_profile->execute();
                         $row_conversation = $user_profile->fetch(PDO::FETCH_ASSOC);
                         $user_profile->closeCursor();
