@@ -26,10 +26,10 @@ else
 {
     if (isset($fname) && $fname != "")
     {
-        $query = 'UPDATE profil SET fname= :fname WHERE player_id = :id';
+        $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
-        $new->bindValue(':id', $id);
+        $new->bindValue(':id', $ide);
         $new->execute();
     }
     
