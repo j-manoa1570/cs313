@@ -3,7 +3,7 @@ session_start();
 require("heroku_access.php");
 $db = get_db();
 
-$message = $_POST['message'];
+$message = $_POST['instant_message'];
 $id = $_SESSION['id'];
 
 if (isset($message) && $message != "")
