@@ -35,7 +35,6 @@ a:visited {
 
 #standard {
     background-color: #FFFFFF;
-    //padding: 10px;
     width: 95%;
     margin: auto;
 }
@@ -48,7 +47,6 @@ a:visited {
     background-color: #000000;
     border-radius: 5px;
     width: 100%;
-    //padding-bottom: 100%;
     min-height: 500px;
 }
 
@@ -56,6 +54,5 @@ a:visited {
     background-color: antiquewhite;
     width: 20%;
     padding: 10px;
-  //  padding-bottom: auto;
 }
 
