@@ -1,0 +1,61 @@
+/* CSS Style Sheet */
+
+body {
+    margin: 0 auto;
+    font-family: Myriad Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #545454;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.containerrow {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.containercol {
+    display:flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+#standard {
+    background-color: #FFFFFF;
+ //   opacity: .90;
+ //   box-shadow: 5px 5px 5px rgba(0, 0, 50, 0.06);
+ //   border: .5px; 
+  //  border-radius: 5px;
+    padding: 10px;
+    //width: 60%;
+    margin: auto;
+  //  height: 100%;
+    //padding-bottom: 100%;
+}
+
+#center {
+    text-align: center;
+}
+
+#standardtext {
+    background-color: #000000;
+    border-radius: 5px;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+#side {
+    background-color: antiquewhite;
+    width: 20%;
+    padding: 10px;
+  //  padding-bottom: auto;
+}
+
