@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require("heroku_access.php");
 $db = get_db();
 
@@ -8,7 +8,7 @@ $lname = $_POST['new_lname'];
 $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
-$id = $_SESSION['id'];
+//$id = $_SESSION['id'];
 
 if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "")
 {
