@@ -8,7 +8,13 @@ $lname = $_POST['new_lname'];
 $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
-//$id = $_SESSION['id'];
+$id = $_SESSION['id'];
+
+/*******************************************
+ * This php will update the datebase (or at
+ * least it is supposed to).
+ ******************************************/
+
 
 if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "")
 {
@@ -16,8 +22,8 @@ if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($
     header("Location: machine.php");
     die();
 }
-else {
-    try {
+else 
+{
     if (isset($fname) && $fname != "")
     {
         $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
@@ -26,16 +32,7 @@ else {
         $new->bindValue(':id', $id);
         $new->execute();
     }
-    }
-    catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with 'fname' Details: $ex";
-	die();
-}
-
-    try {
+    
     if (isset($lname) && $lname != "")
     {
         $query = 'UPDATE profile SET lname= :lname WHERE player_id = :id';
@@ -44,36 +41,16 @@ else {
         $new->bindValue(':id', $id);
         $new->execute();
     }
-    }
-    catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with 'lname' Details: $ex";
-	die();
-}
-        
-    try 
+      
+    if (isset($title) && $title != "")
     {
-        if (isset($title) && $title != "")
-        {
-            $query = 'UPDATE profile SET title= :title WHERE player_id = :id';
-            $new = $db->prepare($query);
-            $new->bindValue(':title', $title);
-            $new->bindValue(':id', $id);
-            $new->execute();
-        }
+        $query = 'UPDATE profile SET title= :title WHERE player_id = :id';
+        $new = $db->prepare($query);
+        $new->bindValue(':title', $title);
+        $new->bindValue(':id', $id);
+        $new->execute();
     }
-catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with 'title' Details: $ex";
-	die();
-}
-
-    try
-    {
+    
     if (isset($email) && $email != "")
     {
         $query = 'UPDATE profile SET email= :email WHERE player_id = :id';
@@ -82,14 +59,6 @@ catch (Exception $ex)
         $new->bindValue(':id', $id);
         $new->execute();
     }
-    }
-    catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with 'email' Details: $ex";
-	die();
-}
 
     if (isset($bio) && $bio != "")
     {
