@@ -7,6 +7,7 @@ $badLogin = false;
 
 // First check to see if we have post variables, if not, just
 // continue on as always.
+try{
 if (isset($_POST['loginname']) && isset($_POST['loginpass']))
 {
 	// they have submitted a username and password for us to check
@@ -42,6 +43,14 @@ if (isset($_POST['loginname']) && isset($_POST['loginpass']))
 	{
 		$badLogin = true;
 	}
+}
+}
+catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with 'fname' Details: $ex";
+	die();
 }
 // If we get to this point without having redirected, then it means they
 // should just see the login form.
