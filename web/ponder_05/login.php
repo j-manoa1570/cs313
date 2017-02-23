@@ -16,7 +16,7 @@ try
         $password = $_POST['loginpass'];
     
 	// Connect to the DB
-        require("dbConnect.php");
+        require("heroku_access.php");
         $db = get_db();
         $query = 'SELECT password FROM login WHERE username=:username';
         $statement = $db->prepare($query);
@@ -33,7 +33,7 @@ try
                 {
 			// password was correct, put the user on the session, and redirect to home
                     $_SESSION['username'] = $username;
-                    header("Location: home.php");
+                    header("Location: machine.php");
                     die(); // we always include a die after redirects.
                 }
                 else
