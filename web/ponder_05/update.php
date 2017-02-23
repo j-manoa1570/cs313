@@ -8,7 +8,7 @@ $lname = $_POST['new_lname'];
 $title = $_POST['new_title'];
 $email = $_POST['new_email'];
 $bio = $_POST['new_bio'];
-
+$id = $_SESSION['id'];
 
 if (!isset($fname) && $fname == "" && !isset($lname) && $lname == "" && !isset($title) && $title == "" && !isset($email) && $email == "" && !isset($bio) && $bio == "")
 {
@@ -23,7 +23,7 @@ else {
         $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
-        $new->bindValue(':id', $_SESSION['id']);
+        $new->bindValue(':id', $id);
         $new->execute();
     }
     }
@@ -41,7 +41,7 @@ else {
         $query = 'UPDATE profile SET lname= :lname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':lname', $lname);
-        $new->bindValue(':id', $_SESSION['id']);
+        $new->bindValue(':id', $id);
         $new->execute();
     }
     }
@@ -60,7 +60,7 @@ else {
             $query = 'UPDATE profile SET title= :title WHERE player_id = :id';
             $new = $db->prepare($query);
             $new->bindValue(':title', $title);
-        $new->bindValue(':id', $_SESSION['id']);
+            $new->bindValue(':id', $id);
             $new->execute();
         }
     }
@@ -79,7 +79,7 @@ catch (Exception $ex)
         $query = 'UPDATE profile SET email= :email WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':email', $email);
-        $new->bindValue(':id', $_SESSION['id']);
+        $new->bindValue(':id', $id);
         $new->execute();
     }
     }
@@ -91,24 +91,14 @@ catch (Exception $ex)
 	die();
 }
 
-    try
-    {
     if (isset($bio) && $bio != "")
     {
         $query = 'UPDATE profile SET bio= :bio WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':bio', $bio);
-        $new->bindValue(':id', $_SESSION['id']);
+        $new->bindValue(':id', $id);
         $new->execute();
     }
-    }
-    catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with 'bio' Details: $ex";
-	die();
-}
 }
 
 header("Location: machine.php");
