@@ -18,7 +18,7 @@ try
 	// Connect to the DB
         require("heroku_access.php");
         $db = get_db();
-        $query = 'SELECT password FROM login WHERE username=:username';
+        $query = 'SELECT password FROM player WHERE username=:username';
         $statement = $db->prepare($query);
         $statement->bindValue(':username', $username);
         $result = $statement->execute();
