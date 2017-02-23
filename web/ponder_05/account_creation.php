@@ -26,7 +26,7 @@ try{
 $query = 'SELECT id FROM player WHERE username = :username';
 $push_id = $db->prepare($query);
 $push_id->bindValue(':username', $username);
-$push->execute();
+$push_id->execute();
 $row = $push_id->fetch(PDO::FETCH_ASSOC);
 $push_id->closeCursor();
 }
@@ -35,7 +35,7 @@ catch (Exception $ex)
     echo "ERROR: Could not receive id from database (This is found at line 30). Details: $ex";
     die();
 }
-/*
+
 try {
 $id = $row['id'];
 $_SESSION['id'] = $id;
@@ -57,7 +57,7 @@ catch (Exception $ex)
     echo "ERROR: Could not create new id in profile table. Details: $ex";
     die();
 }
-*/
+
 
 
 header("Location: login.php");
