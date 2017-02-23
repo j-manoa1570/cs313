@@ -42,37 +42,6 @@ Originally the PHP that was used for this page was the php that was found in the
                 <div id="containercol">
                     <?php
                     
-                    /**************************************************************************
-                     * This PHP does a couple of things. 
-                     * 1) Grabs user login information from login.php
-                     * 2) Prepares to access database
-                     * 3) Fetches player id using the username and password as criteria
-                     * 4) Fetches player profile information using player id as fk
-                     * 5) Outputs the player's profile information 
-                     * More detail is below in each of the 5 sections
-                     * NOTE: This should really be in a seperate file that contains php functions
-                     *       since this is used in a section below again almost line for line.
-                     *************************************************************************/
-                    
-                    // 1) Takes the form information from login.php (username and password that was entered in) 
-                    //    and sets it to variables to be used for pinging the database.
-                   /* $username = $_SESSION['username'];
-                    
-                    // 2) Preparing to access the database by declaring what columns are being accessed from
-                    //    what table under what conditions. Variables are bound so that we can access data
-                    //    from database.
-                    $query = 'SELECT id FROM player WHERE username= :username';
-                    $user_id = $db->prepare($query);
-                    $user_id->bindValue(':username', $username);
-                    
-                    // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
-                    //    variable, and SQL database connection is closed.
-                    $user_id->execute();
-                    $row = $user_id->fetch(PDO::FETCH_ASSOC);
-                    $user_id->closeCursor();
-*/
-                    //$id = get_id();
-                    
                     // 4) This is a combination of steps 2 and 3 but this time to the profile table
                     //    so we can retreive data on the player's profile.
                     //$id = $row['id'];
@@ -102,38 +71,6 @@ Originally the PHP that was used for this page was the php that was found in the
                 <div id="standard">
                     <div id="standardtext">
                         <?php
-                        /**************************************************************************
-                        * This PHP does a couple of things. 
-                        * 1) Grabs user login information from login.php
-                        * 2) Prepares to access database
-                        * 3) Fetches player id using the username and password as criteria
-                        * 4) Fetches player profile information using player id as fk
-                        * 5) Outputs the player's profile information 
-                        * More detail is below in each of the 5 sections
-                        * NOTE: Part 4 should really be a txt file that it pulls in as it will 
-                        *       allow for formatting instead of it being one long string. Not sure
-                        *       currently how to do that except to have the php generate a txt file
-                        *       that is updated everytime the user pressed the submit button and
-                        *       the database stores the txt filename and then echos an <a href="">
-                        *       tag, parses through the file, and then displays it out to the user.
-                        *************************************************************************/
-                    
-                        // 1) Takes the form information from login.php (username and password that was entered in) 
-                        //    and sets it to variables to be used for pinging the database.
-                        $username = $_POST['username'];
-                        
-                        // 2) Preparing to access the database by declaring what columns are being accessed from
-                        //    what table under what conditions. Variables are bound so that we can access data
-                        //    from database.
-                        $query = 'SELECT id FROM player WHERE username= :username';
-                        $user_id = $db->prepare($query);
-                        $user_id->bindValue(':username', $username);
-                    
-                        // 3) The SQL command is executed, data is fetched, fetched data is assigned to a php
-                        //    variable, and SQL database connection is closed.
-                        $user_id->execute();
-                        $row = $user_id->fetch(PDO::FETCH_ASSOC);
-                        $user_id->closeCursor();
 
                         // 4) This is a combination of steps 2 and 3 but this time to the profile table
                         //    so we can retreive data on the player's profile.
