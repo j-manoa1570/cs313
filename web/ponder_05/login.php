@@ -17,7 +17,7 @@ $badLogin = false;
         // Connect to the DB
         require("heroku_access.php");
         $db = get_db();
-        $query = 'SELECT password FROM player WHERE username=:username';
+        $query = 'SELECT password, id FROM player WHERE username=:username';
         $statement = $db->prepare($query);
         $statement->bindValue(':username', $username);
         $result = $statement->execute();
@@ -30,6 +30,7 @@ $badLogin = false;
             {
                 // password was correct, put the user on the session, and redirect to home
                 $_SESSION['username'] = $username;
+                $_SESSION['id'] = $row['id'];
                 header("Location: machine.php");
                 die(); // we always include a die after redirects.
             }
