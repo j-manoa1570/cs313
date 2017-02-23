@@ -55,10 +55,7 @@ session_start();
         <div id="standard2">
             <div id="center">
                 <form action="update.php" method="post">
-                    <p>Profile Picture:
-                        <input type="text" name="new_picture">
-                        <br/>
-                        First Name:
+                    <p>First Name:
                         <input type="text" name="new_fname">
                         <br/>
                         Last Name:
