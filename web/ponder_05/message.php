@@ -8,7 +8,7 @@ $id = $_SESSION['id'];
 
 if (isset($message) && $message != "")
     {
-        $query = 'UPDATE conversation SET dcon= :dcon WHERE player_id = :id';
+        $query = 'UPDATE conversation SET dco= :dcon WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':dcon', $message);
         $new->bindValue(':id', $id);
