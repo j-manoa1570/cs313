@@ -28,8 +28,8 @@ Originally the PHP that was used for this page was the php that was found in the
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!--<link rel="stylesheet" href="ponder_05.css">
-        <link rel="stylesheet" href="login.css">-->
+        <link rel="stylesheet" href="ponder_05.css">
+        <link rel="stylesheet" href="login.css">
         <link rel="icon" href="welcome_to_the_machine.png">
         <title>Machine</title>
     </head>

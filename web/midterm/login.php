@@ -104,10 +104,10 @@ else
         <!-- Error is displayed if login does not work -->
         
         <?php
-        if ($badLogin)
+        /*if ($badLogin)
         {
             echo "Incorrect username or password!<br /><br />\n";
-        }
+        }*/
         ?>
 
         <!-- This is the login credentials page to login. Option for creating a new account is also available. -->
