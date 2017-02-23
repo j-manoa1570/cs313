@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require("heroku_access.php");
 $db = get_db();
 
@@ -26,7 +26,7 @@ else
 {
     if (isset($fname) && $fname != "")
     {
-        $query = 'UPDATE profile SET fname= :fname WHERE player_id = :id';
+        $query = 'UPDATE profil SET fname= :fname WHERE player_id = :id';
         $new = $db->prepare($query);
         $new->bindValue(':fname', $fname);
         $new->bindValue(':id', $id);
