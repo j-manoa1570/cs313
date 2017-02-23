@@ -23,6 +23,21 @@ $new_account->bindValue(':username', $username);
 $new_account->bindValue(':password', $hashedPassword);
 $new_account->execute();
 
+$query = 'SELECT id FROM player WHERE username = :username';
+$push_id = $db->prepare($query);
+$push_id->bindValue(':username', $username);
+$push->execute();
+$row = $push_id->fetch(PDO::FETCH_ASSOC);
+$push_id->closeCursor();
+
+$id = $row['id'];
+
+$query = 'INSERT INTO profile(player_id) VALUES(:id)';
+$profile_id = $db->prepare($query);
+$profile_id->bindValue(':id', $id);
+$profile_id->execute();
+
+
 header("Location: login.php");
 die();
 
